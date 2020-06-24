@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
         errorsArr.forEach( (error, i) => {
             if (error.includes('Email') || error.includes('email')) {
                 emailError = errorsArr[i];
-            } else if (error.includes('Username') || error.includes('sername')) {
+            } else if (error.includes('Username') || error.includes('username')) {
                 usernameError = errorsArr[i];
             } else if (error.includes('Password') || error.includes('password')) {
                 passwordError = errorsArr[i];
