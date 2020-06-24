@@ -8,15 +8,26 @@
     --color-hover-purple: #677bc4;
     --color-form: #36393f;
     --color-form-input: #dcddde;
+    --color-error-red: #f04747;
 }
 
-body {
+.session-page {
+    background-image: url('discord-background.png');
+    background-size: cover;
+}
+
+.session {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     min-height: 100vh;
+}
+
+.session-page > a {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    text-decoration: none;
 }
 
 @keyframes fall {
@@ -78,6 +89,11 @@ body {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.form-type-field > .form-error {
+    color: var(--color-error-red);
+    font-size: 10px;
 }
 
 .form-input {

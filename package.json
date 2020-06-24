@@ -24,7 +24,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,9 @@
     "url": "https://github.com/AChen414/Fullstack-Discord-Clone/issues"
   },
   "homepage": "https://github.com/AChen414/Fullstack-Discord-Clone#readme",
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "12.16.3",
+    "npm": "6.14.4"
+  }
 }

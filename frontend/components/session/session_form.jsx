@@ -54,60 +54,65 @@ class SessionForm extends React.Component {
             }})
 
         return(
-            <div className="session-form">
-                <h1 className="form-type">{this.props.formType}</h1>
-                <h2 className="form-submessage">{subMessage}</h2>
+            <div className="session-page">
+                <Link to="/">Discord</Link>
+                <div className="session">
+                    <div className="session-form">
+                        <h1 className="form-type">{this.props.formType}</h1>
+                        <h2 className="form-submessage">{subMessage}</h2>
 
-                <form className="signup-form" onSubmit={this.handleSubmit}>
-                    <label className="form-type-field">
-                        <span>Email</span>
-                        <span>{emailError}</span>
-                        <input 
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                            className="form-input"
-                        />
-                    </label>
+                        <form className="signup-form" onSubmit={this.handleSubmit}>
+                            <label className="form-type-field">
+                                <span>Email</span>
+                                <span className="form-error">{emailError}</span>
+                                <input 
+                                    type="text"
+                                    value={this.state.email}
+                                    onChange={this.handleInput('email')}
+                                    className="form-input"
+                                    />
+                            </label>
 
-                    {this.props.formType === "Create an account" ? (
-                        <label className="form-type-field">
-                            <span>Username</span>
-                            <span>{usernameError}</span>
-                            <input 
-                                type="text"
-                                value={this.state.username}
-                                onChange={this.handleInput('username')}
-                                className="form-input"
-                                />
-                        </label>
-                        ) : ''
-                    }
+                            {this.props.formType === "Create an account" ? (
+                                <label className="form-type-field">
+                                    <span>Username</span>
+                                    <span className="form-error">{usernameError}</span>
+                                    <input 
+                                        type="text"
+                                        value={this.state.username}
+                                        onChange={this.handleInput('username')}
+                                        className="form-input"
+                                        />
+                                </label>
+                                ) : ''
+                            }
 
-                    <label className="form-type-field">
-                        <span>Password</span>
-                        <span>{passwordError}</span>
-                        <input 
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                            className="form-input"
-                        />
-                    </label>
+                            <label className="form-type-field">
+                                <span>Password</span>
+                                <span className="form-error">{passwordError}</span>
+                                <input 
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={this.handleInput('password')}
+                                    className="form-input"
+                                    />
+                            </label>
 
-                    <button className="form-submit">
-                        {this.props.formType === 'Create an account' ? 'Continue' : 'Login'}
-                    </button>
-                    {this.props.formType === 'Create an account' ? '' : (
-                        <button className="form-submit" onClick={this.handleDemo}>
-                            Demo Login
-                        </button>
-                    )}
-                    {this.props.formType === 'Create an account' ? ('') : (
-                        <label className="alt-form-type">Need an account?</label>
-                    )}
-                    <Link to={urlAddress}>{linkDescription}</Link>
-                </form>
+                            <button className="form-submit">
+                                {this.props.formType === 'Create an account' ? 'Continue' : 'Login'}
+                            </button>
+                            {this.props.formType === 'Create an account' ? '' : (
+                                <button className="form-submit" onClick={this.handleDemo}>
+                                    Demo Login
+                                </button>
+                            )}
+                            {this.props.formType === 'Create an account' ? ('') : (
+                                <label className="alt-form-type">Need an account?</label>
+                                )}
+                            <Link to={urlAddress}>{linkDescription}</Link>
+                        </form>
+                    </div>
+                </div>
             </div>
         )
     };
