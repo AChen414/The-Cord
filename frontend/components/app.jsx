@@ -11,8 +11,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        <h1>Discord</h1>
-        
         <Route exact path='/login' component={LoginContainer} />
         <Route exact path='/signup' component={SignupContainer} />
     </div>

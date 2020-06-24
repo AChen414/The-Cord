@@ -33,28 +33,35 @@ class SessionForm extends React.Component {
     }
 
     handleErrors() {
-        return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>{error}</li>
-                ))}
-            </ul>
-        )
+        return this.props.errors.map ((errors) => errors);
     };
 
     render() {
         const urlAddress = this.props.formType === "Create an account" ? '/login' : '/signup';
         const linkDescription = this.props.formType === "Create an account" ? 'Already have an account?' : 'Register';
         const subMessage = this.props.formType !== 'Create an account' ? "We're so excited to see you again!" : '';
+        const errorsArr = this.handleErrors();
+        let emailError;
+        let usernameError;
+        let passwordError;
+        errorsArr.forEach( (error, i) => {
+            if (error.includes('Email') || error.includes('email')) {
+                emailError = errorsArr[i];
+            } else if (error.includes('Username') || error.includes('sername')) {
+                usernameError = errorsArr[i];
+            } else if (error.includes('Password') || error.includes('password')) {
+                passwordError = errorsArr[i];
+            }})
+
         return(
             <div className="session-form">
                 <h1 className="form-type">{this.props.formType}</h1>
                 <h2 className="form-submessage">{subMessage}</h2>
 
-                {this.handleErrors()}
-
                 <form className="signup-form" onSubmit={this.handleSubmit}>
-                    <label className="form-type-field">Email
+                    <label className="form-type-field">
+                        <span>Email</span>
+                        <span>{emailError}</span>
                         <input 
                             type="text"
                             value={this.state.email}
@@ -64,7 +71,9 @@ class SessionForm extends React.Component {
                     </label>
 
                     {this.props.formType === "Create an account" ? (
-                        <label className="form-type-field">Username
+                        <label className="form-type-field">
+                            <span>Username</span>
+                            <span>{usernameError}</span>
                             <input 
                                 type="text"
                                 value={this.state.username}
@@ -75,7 +84,9 @@ class SessionForm extends React.Component {
                         ) : ''
                     }
 
-                    <label className="form-type-field">Password
+                    <label className="form-type-field">
+                        <span>Password</span>
+                        <span>{passwordError}</span>
                         <input 
                             type="password"
                             value={this.state.password}
