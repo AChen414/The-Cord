@@ -14,6 +14,10 @@ class SessionForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this);
     };
 
+    componentDidMount() {
+        this.setState({ errors: { session: [] } });
+    }
+
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.currentTarget.value })
@@ -60,7 +64,6 @@ class SessionForm extends React.Component {
                     <div className="session-form">
                         <h1 className="form-type">{this.props.formType}</h1>
                         <h2 className="form-submessage">{subMessage}</h2>
-
                         <form className="signup-form" onSubmit={this.handleSubmit}>
                             <label className="form-type-field">
                                 <span>Email</span>
