@@ -14,8 +14,8 @@ class SessionForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this);
     };
 
-    componentDidMount() {
-        this.setState({ errors: { session: [] } });
+    componentWillUnmount() {
+        this.props.clearErrors();
     }
 
     handleInput(type) {
@@ -60,6 +60,7 @@ class SessionForm extends React.Component {
         return(
             <div className="session-page">
                 <Link to="/">Discord</Link>
+                
                 <div className="session">
                     <div className="session-form">
                         <h1 className="form-type">{this.props.formType}</h1>

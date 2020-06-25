@@ -13,7 +13,7 @@ const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER
 });
 
-const receiveErrors = errors => ({
+export const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 })
@@ -30,7 +30,7 @@ export const login = user => dispatch => (
     APISessionUtil.login(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), err => (
-        dispatch(receiveCurrentUser(err.responseJSON))
+        dispatch(receiveErrors(err.responseJSON))
     ))
 );
 
