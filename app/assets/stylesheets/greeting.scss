@@ -1,0 +1,124 @@
+:root {
+    --color-dark-gray-bg: #26262b;
+    --color-purple-button: #7289da;
+    --color-off-white: #b1b1b2;
+    --color-light-gray-p: rgba(255,255,255,0.6);
+    --color-black-button-text: #18191c;
+    --color-box-shadow: rgba(0,0,0,0.2);
+}
+
+.front-page-container {
+    background-color: var(--color-dark-gray-bg);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.front-page {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.front-page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.front-page-header > span {
+    color: white;
+}
+
+.front-page-header > a {
+    border: 2px solid var(--color-off-white);
+    border-radius: 20px;
+    padding: 5px 17px 7px;
+    line-height: 24px;
+    margin-right: 18px;
+    text-decoration: none;
+    color: var(--color-off-white);
+    font-family: 'Open Sans';
+    &:hover {
+        color: white;
+        border: 2px solid white;
+    }
+}
+
+.front-page-description {
+    font-family: 'Open Sans';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.front-page-description > h1 {
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    line-height: 44px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.front-page-description > p {
+    color: var(--color-light-gray-p);
+    font-size: 13px;
+    text-align: center;
+    width: 70%;
+    line-height: 30px;
+}
+
+.front-page-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.front-page-buttons > a {
+    background: white;
+    color: var(--color-black-button-text);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    z-index: 1;
+    text-decoration: none;
+    width: 250px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 var(--color-box-shadow);
+    margin-right: 45px;
+    height: 45px;
+    font-family: 'Open Sans';
+    font-weight: 500;
+
+    &:hover {
+        margin-top: 1px;
+    }
+}
+
+.front-page-buttons > button {
+    background: var(--color-purple-button);
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    z-index: 1;
+    width: 250px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 var(--color-box-shadow);
+    margin-right: 45px;
+    height: 45px;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    outline: none;
+    border: none;
+    &:hover {
+        margin-top: 1px;
+        cursor: pointer;
+    }
+}
