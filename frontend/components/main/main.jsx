@@ -9,7 +9,6 @@ class Main extends React.Component {
     render() {
         return(
             <div className="main-page">
-                <ServersContainer /> 
                 <FooterContainer />
             </div>
         )
@@ -18,5 +17,7 @@ class Main extends React.Component {
 
 export default Main;
 
-/* <ChannelsContainer />
+/*
+<ChannelsContainer />
+<ServersContainer />
 */

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
 import Main from './main';
 
 const mSTP = (state) => {
@@ -10,7 +9,7 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => {
     return {
-        logout: () => dispatch(logout())
+
     };
 };
 

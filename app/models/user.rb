@@ -3,6 +3,20 @@ class User < ApplicationRecord
     validates :username, :session_token, :email, uniqueness: true 
     validates :password, length: { minimum: 6, allow_nil: true }
 
+    has_many :servers_created,
+        primary_key: :id,
+        foreign_key: :owner_id,
+        class_name: :Server
+
+    has_many :server_users,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :ServerUser 
+
+    has_many :servers,
+        through: :server_users,
+        source: :servers 
+
     attr_reader :password 
 
     after_initialize :ensure_session_token
