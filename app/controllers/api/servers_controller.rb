@@ -2,7 +2,7 @@ class Api::ServersController < ApplicationController
     def index 
         @servers = current_user.servers
 
-        render :index
+        render 'api/servers/index'
     end
 
     def create

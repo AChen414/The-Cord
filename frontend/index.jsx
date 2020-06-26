@@ -6,6 +6,7 @@ import Root from './components/root';
 
 //////////Testing///////////
 import { logout } from './actions/session_actions';
+import { fetchServers } from './actions/server_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -28,4 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.logout = logout;
+    window.fetchServers = fetchServers;
+        //dispatch(fetchServers()).then(console.log)
 })

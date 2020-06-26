@@ -1,12 +1,12 @@
 class ServerUser < ApplicationRecord
     validates :user_id, :server_id, presence: true
 
-    has_many :users,
+    belongs_to :users,
         primary_key: :id,
         foreign_key: :user_id,
         class_name: :User 
 
-    has_many :servers,
+    belongs_to :servers,
         primary_key: :id,
         foreign_key: :server_id,
         class_name: :Server
