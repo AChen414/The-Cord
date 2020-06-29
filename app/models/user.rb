@@ -17,6 +17,8 @@ class User < ApplicationRecord
         through: :server_users,
         source: :servers 
 
+    has_one_attached :profile_pic
+    
     attr_reader :password 
 
     after_initialize :ensure_session_token

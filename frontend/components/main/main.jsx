@@ -1,5 +1,6 @@
 import React from 'react';
 import FooterContainer from './footer/footer_container'
+import ServersContainer from '../servers/servers_container';
 
 class Main extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class Main extends React.Component {
     render() {
         return(
             <div className="main-page">
+                <ServersContainer />
                 <FooterContainer />
             </div>
         )
@@ -19,5 +21,5 @@ export default Main;
 
 /*
 <ChannelsContainer />
-<ServersContainer />
+
 */

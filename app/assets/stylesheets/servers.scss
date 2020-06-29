@@ -1,0 +1,93 @@
+:root {
+    --color-dark-gray-server: #202325;
+    --color-green: #43b581;
+    --color-purple: #7289da;
+    --color-server-off-white: #DCDDDE;
+    --color-server-button-gray: rgba(54,57,63,1);
+    --color-footer-gray: #2a2b2f;
+    --color-logout-red: rgb(240, 71, 71);
+}
+
+.servers {
+    background: var(--color-dark-gray-server);
+    height: 100vh;
+    width: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    position: relative;
+    overflow: scroll;
+}
+
+.server-button {
+    width: 48px;
+    height: 48px;
+    background: var(--color-server-button-gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    transition: all 0.1s ease-in-out;
+    color: var(--color-server-off-white);
+    font-family: 'Open Sans';
+    font-weight: 600;
+
+    &:hover {
+        border-radius: 25%;
+        cursor: pointer;
+    }
+}
+
+.separator {
+    width: 38px;
+    height: 2px;
+    background: var(--color-server-button-gray);
+    margin-bottom: 10px;
+
+}
+
+.footer {
+    position: absolute;
+    background: var(--color-footer-gray);
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 250px;
+    height: 52px;
+    margin-left: 72px;
+}
+
+.footer-button {
+    background-color: var(--color-logout-red);
+    font-size: 16px;
+    color: white;
+    width: 80px;
+    border-radius: 5px;
+    font-weight: 200;
+    margin-bottom: 11px;
+    margin-top: 11px;
+    margin-right: 10px;
+    padding: 7px;
+    border: 0;
+
+    &:hover {
+        z-index: 3px;
+        opacity: .85;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.footer-username {
+    line-height: 28px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Open Sans';
+    padding: 11px;
+}
