@@ -13,6 +13,9 @@ const ServerItem = (props) => {
     return(
         <div className="server-button">
             <p>{abbreviated}</p>
+            <div className="server-name-hover">
+                <span>{props.server.name}</span>
+            </div>
         </div>
     )
 }

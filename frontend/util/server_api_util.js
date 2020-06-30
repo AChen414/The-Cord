@@ -4,3 +4,11 @@ export const fetchServers = () => {
         url: '/api/servers'
     })
 }
+
+export const createServer = server => {
+    return $.ajax({
+        method: 'POST',
+        url: '/api/servers',
+        data: server
+    });
+};

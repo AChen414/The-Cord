@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import ServerItem from './server_item';
+import Modal from '../modal';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 class Servers extends React.Component {
     constructor(props) {
@@ -16,7 +18,9 @@ class Servers extends React.Component {
         return(
             <div className="servers">
                 <div className="server-buttons">
-                    <span>Home</span>
+                    <div className="server-button">
+                        <p>Home</p>
+                    </div>
                     <div className="separator"></div>
                     <div className="servers-list">
                         <ul>
@@ -25,6 +29,15 @@ class Servers extends React.Component {
                             ))}
                         </ul>
                     </div>
+                    <div className="separator"></div>
+                    <div 
+                        className="server-button"
+                        onClick={() => dispatch(openModal('Add Server'))}
+                        id="add-server-button"
+                    >
+                        +
+                    </div>
+                    <Modal />
                 </div>
             </div>
         )
