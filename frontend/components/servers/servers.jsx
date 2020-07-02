@@ -13,8 +13,14 @@ class Servers extends React.Component {
         this.props.fetchServers();
     }
 
+    componentDidUpdate(prevProps) {
+        if(this.props.servers.length !== prevProps.servers.length) {
+            this.props.fetchServers();
+        }
+    }
+
     render() {
-        const { servers } = this.props
+        const { servers, fetchAllServerInfo } = this.props
         return(
             <div className="servers">
                 <div className="server-buttons">

@@ -9,6 +9,8 @@ class Api::ServersController < ApplicationController
         @server = Server.new(server_params)
 
         if @server.save 
+            ServerUser.create({user_id: @server.owner_id, server_id: @server.id})
+            Channel.create({name: 'general', server_id: @server.id})
             render :show
         else 
             render json: ["Server must have a name!"], status: 422
@@ -16,6 +18,15 @@ class Api::ServersController < ApplicationController
     end
 
     def show
+        @server = Server.find_by(id: params[:id])
+        render :show
+    end
+
+    def update
+
+    end
+
+    def destroy
 
     end
 

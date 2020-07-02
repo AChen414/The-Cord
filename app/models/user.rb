@@ -17,6 +17,12 @@ class User < ApplicationRecord
         through: :server_users,
         source: :servers 
 
+    has_many :messages,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Message 
+
+
     has_one_attached :profile_pic
     
     attr_reader :password 

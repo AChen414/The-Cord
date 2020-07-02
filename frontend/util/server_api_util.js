@@ -9,6 +9,13 @@ export const createServer = server => {
     return $.ajax({
         method: 'POST',
         url: '/api/servers',
-        data: server
+        data: {server}
     });
 };
+
+export const fetchServer = serverId => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/servers/${serverId}`
+    })
+}

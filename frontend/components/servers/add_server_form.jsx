@@ -4,9 +4,10 @@ class AddServerForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            name: '',
-            ownerId: this.props.currentUser
+            name: `${this.props.currentUser.username}\'s Server`,
+            owner_id: this.props.currentUser.id
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
     serverAbbreviation(serverName) {
@@ -19,15 +20,15 @@ class AddServerForm extends React.Component {
     }
 
     handleInput(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        return e => {
+            this.setState({ [field]: e.currentTarget.value })
+        };
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const newServer = Object.assign({}, this.state);
-        this.props.createServer(server).then(() => this.props.closeModal());
+        this.props.createServer(newServer).then(() => this.props.closeModal());
     }
 
     render() {
@@ -42,7 +43,7 @@ class AddServerForm extends React.Component {
                             <span className="server-form-name-error">{}</span>
                             <input 
                                 type="text"
-                                value={this.props.currentUser.username}
+                                value={this.state.name}
                                 onChange={this.handleInput('name')}
                                 className="server-form-input"
                             />

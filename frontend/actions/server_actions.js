@@ -2,6 +2,8 @@ import * as APIServerUtil from '../util/server_api_util';
 
 export const RECEIVE_SERVERS = 'RECEIVE_SERVERS';
 export const RECEIVE_SERVER = 'RECEIVE_SERVER';
+export const RECEIVE_SERVER_ERRORS = 'RECEIVE_SERVER_ERRORS';
+export const RECEIVE_ALL_SERVER_INFO = 'RECEIVE_ALL_SERVER_INFO';
 
 const receiveServers = servers => {
     return {
@@ -17,14 +19,36 @@ const receiveServer = server => {
     }
 }
 
+const receiveAllServerInfo = allServerInfo => {
+    return {
+        type: RECEIVE_ALL_SERVER_INFO,
+        allServerInfo
+    }
+}
+
+export const receiveServerErrors = errors => {
+    return {
+        type: RECEIVE_SERVER_ERRORS,
+        errors
+    }
+}
+
 export const fetchServers = () => dispatch => (
     APIServerUtil.fetchServers().then(servers => (
         dispatch(receiveServers(servers))
     ))
 );
 
-export const createServer = () => dispatch => (
-    APIServerUtil.createServer().then(server => (
+export const createServer = (server) => dispatch => (
+    APIServerUtil.createServer(server).then(server => (
         dispatch(receiveServer(server))    
+    ), err => (
+        dispatch(receiveServerErrors(err.responseJSON))
+    ))
+);
+
+export const fetchAllServerInfo = serverId => dispatch => (
+    APIServerUtil.fetchServer(serverId).then((server) => (
+        dispatch(receiveAllServerInfo(server))
     ))
 );

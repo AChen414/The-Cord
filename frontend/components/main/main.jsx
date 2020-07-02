@@ -1,6 +1,9 @@
 import React from 'react';
 import FooterContainer from './footer/footer_container'
 import ServersContainer from '../servers/servers_container';
+import ChannelsContainer from '../channels/channels_container';
+import MessagesContainer from '../messages/messages_container';
+import { Route } from 'react-router-dom';
 
 class Main extends React.Component {
     constructor(props) {
@@ -12,14 +15,11 @@ class Main extends React.Component {
             <div className="main-page">
                 <ServersContainer />
                 <FooterContainer />
+                <Route path="/@me/channels/:server_id" component={ChannelsContainer} />
+                <Route path="/@me/channels/:server_id/:channel_id" component={MessagesContainer}/>
             </div>
         )
     };
 };
 
 export default Main;
-
-/*
-<ChannelsContainer />
-
-*/

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchServers } from '../../actions/server_actions';
+import { fetchServers, fetchAllServerInfo } from '../../actions/server_actions';
 
 import Servers from './servers';
 
@@ -11,7 +11,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        fetchServers: () => dispatch(fetchServers())
+        fetchServers: () => dispatch(fetchServers()),
     };
 };
 

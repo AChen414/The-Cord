@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AddServerFormContainer from './servers/add_server_form_container';
+import { closeModal } from '../actions/modal_actions';
 
 const Modal = ({modal, closeModal}) => {
     if (!modal) {
@@ -15,7 +16,7 @@ const Modal = ({modal, closeModal}) => {
             return null;
     };
     return(
-        <div className="modal-background">
+        <div className="modal-background" onClick={() => closeModal()}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
