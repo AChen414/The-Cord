@@ -10,8 +10,9 @@
     position: absolute;
     left: 72px;
     width: 250px;
-    height: 92.48%;
+    height: 100vh;
     background-color: var(--color-channel-gray);
+    z-index: 10;
 }
 
 .server-name-header {    
@@ -98,41 +99,12 @@
     }
 }
 
-.users {
-    position: absolute;
-    right: 0px;
-    background-color: #303136;
-    width: 240px;
-    height: 100vh;
-    padding-top: 48px;
-}
-
-.users-list {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 12px;
-}
-
-.user {
-    color: var(--color-light-gray);
-    padding: 8px 5px 8px 5px;
-    margin-bottom: 6px;
-    font-family: 'Open Sans';
-    font-weight: 500;
-    font-size: 17px;
-
-    &:hover {
-        background-color: var(--color-channel-user-hover);
-        color: white;
-    }
-}
-
 .top-nav-bar {
     position: absolute;
     right: 0px;
     width: 77.65%;
     background-color: #36393f;
-    z-index: 10;
+    z-index: 9;
     height: 6.85%;
     border-bottom: 1px solid black;
 }
