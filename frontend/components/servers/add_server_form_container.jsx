@@ -5,7 +5,7 @@ import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
     return {
-        currentUser: state.session.currentUser,
+        currentUser: state.session.user,
         formType: 'Add Server',
         servers: state.entities.servers
     };

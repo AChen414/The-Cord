@@ -9,6 +9,8 @@
 
 .front-page-container {
     background-color: var(--color-dark-gray-bg);
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 0px;
     right: 0px;
