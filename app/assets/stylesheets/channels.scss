@@ -18,7 +18,7 @@
 .server-name-header {    
     display: flex;
     justify-content: space-between;
-    padding: 14px 16px;
+    height: 6.85vh;
 
     &:hover {
         background-color: var(--color-server-name-header-hover-gray);
@@ -34,7 +34,7 @@
     line-height: 20px;
     text-overflow: ellipsis;
     width: 90%;
-
+    padding: 10px;
 }
 
 .server-name-header > span {
@@ -43,6 +43,7 @@
     font-family: 'Open Sans';
     margin-top: 5px;
     font-weight: 600;
+    padding: 10px;
 }
 
 .channels > .line {
@@ -102,7 +103,7 @@
 .top-nav-bar {
     position: absolute;
     right: 0px;
-    width: 77.65%;
+    width: 100%;
     background-color: #36393f;
     z-index: 9;
     height: 6.85%;
