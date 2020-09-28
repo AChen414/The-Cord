@@ -3,7 +3,7 @@ import Main from './main';
 
 const mSTP = (state) => {
     return {
-
+        currentUser: state.session.currentUser,
     };
 };
 
