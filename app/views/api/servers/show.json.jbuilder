@@ -2,6 +2,9 @@ json.entities do
     json.servers do 
         json.set! @server.id do
             json.extract! @server, :id, :name, :owner_id
+            if @server.server_photo.attached?
+                json.photoURL url_for(@server.server_photo)
+            end
         end
     end
 
