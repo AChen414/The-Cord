@@ -19,4 +19,6 @@ class Server < ApplicationRecord
         primary_key: :id,
         foreign_key: :server_id,
         class_name: :Channel
+
+    has_one_attached :server_photo
 end
