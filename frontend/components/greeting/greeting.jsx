@@ -33,6 +33,38 @@ const Greeting = ({ currentUser, login }) => {
                         onClick={(e) => demoLogin(e)}
                     >Demo Login</button>
                 </div>
+                <div className="splash-images">
+                    <img className="android" src={window.android}/>
+                    <img className="iphone" src={window.iphone}/>
+                    <img className="controller" src={window.controller}/>
+                    <img className="desktop" src={window.desktop}/>
+                    <img className="laptop" src={window.laptop}/>
+                    <img className="potion" src={window.potion}/>
+                    <img className="disc" src={window.disc}/>
+                    <img className="headphones" src={window.headphones}/>
+                    <img className="box" src={window.box}/>
+                    <img className="gamepak floating1" src={window.gamepak}/>
+                    <img className="bomb floating2" src={window.bomb}/>
+                    <img className="coin1 floating1" src={window.coin}/>
+                    <img className="coin2 floating1" src={window.coin}/>
+                    <img className="triangle1" src={window.triangle}/>
+                    <img className="triangle2" src={window.triangle}/>
+                    <img className="triangle3" src={window.triangle}/>
+                    <img className="circle1" src={window.circle}/>
+                    <img className="circle2" src={window.circle}/>
+                    <img className="circle3" src={window.circle}/>
+                    <img className="circle4" src={window.circle}/>
+                    <img className="circlefill1" src={window.circle}/>
+                    <img className="circlefill2" src={window.circle}/>
+                    <img className="circlefill3" src={window.circle}/>
+                    <img className="circlefill4" src={window.circle}/>
+                    <img className="circlefill5" src={window.circle}/>
+                    <img className="square1" src={window.square}/>
+                    <img className="square2" src={window.square}/>
+                    <img className="square3" src={window.square}/>
+                    <img className="x-image1" src={window.x}/>
+                    <img className="x-image2" src={window.x}/>
+                </div>
             </div>
         </div>
     )
