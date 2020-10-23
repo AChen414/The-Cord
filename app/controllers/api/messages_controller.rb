@@ -1,6 +1,6 @@
 class Api::MessagesController < ApplicationController
     def index 
-        @messages = Channel.find_by(channel_id: params[:channel_id]).messages
+        @messages = Message.all
         render :index
     end
 
