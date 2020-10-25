@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import ServerItem from './server_item';
 import Modal from '../modal';
 import { openModal, closeModal } from '../../actions/modal_actions';
@@ -24,9 +24,13 @@ class Servers extends React.Component {
         return(
             <div className="servers">
                 <div className="server-buttons">
-                    <div className="server-button">
+                    <NavLink
+                        exact to={`/@me`}
+                        className="server-button"
+                        activeStyle={{ borderRadius: '25%', backgroundColor: '#7289da' }}
+                    >
                         <p>Home</p>
-                    </div>
+                    </NavLink>
                     <div className="separator"></div>
                     <div className="servers-list">
                         <ul>

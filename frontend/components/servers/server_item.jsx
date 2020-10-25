@@ -15,7 +15,7 @@ const ServerItem = (props) => {
             <NavLink
                 to={`/@me/channels/${props.server.id}${`/${props.server.channel_ids[0] ? props.server.channel_ids[0] : ''}`}`}
                 className="server-button"
-                activeStyle={{ borderRadius: '25%' }}
+                activeStyle={{ borderRadius: '25%', backgroundColor: '#7289da' }}
             >
                 <p>{abbreviated}</p>
                 <div className="server-name-hover">

@@ -5,7 +5,8 @@ import Messages from './messages';
 
 const mSTP = (state, ownProps) => {
     return {
-        
+        channelId: ownProps.match.params.channel_id,
+        channels: state.entities.channels
     };
 };
 
