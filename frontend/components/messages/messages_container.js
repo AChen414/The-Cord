@@ -15,4 +15,4 @@ const mDTP = dispatch => {
     };
 };
 
-export default connect(mSTP, mDTP)(Messages);
+export default withRouter(connect(mSTP, mDTP)(Messages));

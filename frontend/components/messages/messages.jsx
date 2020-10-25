@@ -8,7 +8,18 @@ class Messages extends React.Component {
 
     render() {
         return(
-            <div></div>
+            <div className="message-box">
+                <div className="message-list">
+                    <div className="chat">
+
+                        <div className="welcome">
+                            <p>Welcome to </p>
+                            <p>This is the start of your </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         )
     };
 };

@@ -102,20 +102,27 @@
 
 .top-nav-bar {
     position: absolute;
-    right: 0px;
     width: 100%;
     background-color: #36393f;
-    z-index: 9;
-    height: 6.85%;
+    padding-top: 14px;
+    padding-bottom: 14px;
     border-bottom: 1px solid black;
+    z-index: 13;
+    left: 322px;
 }
 
 .channel-name {
-    margin-left: 30px;
-    margin-top: 17px;
+    margin-left: 17px;
     font-family: 'Open Sans';
     font-weight: 600;
     color: white;
     line-height: 20px;
     font-size: 16px;
+}
+
+.channel-messages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 322px;
 }

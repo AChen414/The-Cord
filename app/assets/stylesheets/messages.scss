@@ -1,0 +1,34 @@
+.messages {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.message-box {
+    background-color: #36393f;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 61%;
+    padding-left: 20px;
+}
+
+.message-list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: scroll;
+    padding: 50px 5px 5px;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+}
