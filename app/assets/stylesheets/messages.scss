@@ -27,18 +27,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: 96%;
     height: auto;
     overflow: scroll;
     overflow-x: hidden;
+    border-bottom: 1px solid #414449;
 }
 
-
+.message-form {
+    margin: 20px 0px;
+}
 
 .message-form-body {
     background-color: #40444b;
     color: #dcddde;
-    margin-bottom: 20px;
     cursor: text;
     border-radius: 10px;
     padding: 12px 18px;
@@ -54,4 +56,24 @@
 
 .message-form-input {
     display: none;
+}
+
+.welcome {
+    margin: 15px 0px;
+}
+
+#channel-welcome {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Open Sans';
+    color: white;
+    line-height: 40px;
+    margin: 8px 0;
+}
+
+#channel-welcome-start {
+    color: #b9bbbe;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    line-height: 20px;
 }

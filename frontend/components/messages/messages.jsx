@@ -14,8 +14,8 @@ class Messages extends React.Component {
                     <div className="chat">
 
                         <div className="welcome">
-                            <p>Welcome to </p>
-                            <p>This is the start of your </p>
+                            <p id="channel-welcome">Welcome to # !</p>
+                            <p id="channel-welcome-start">This is the start of the channel. </p>
                         </div>
 
                     </div>
