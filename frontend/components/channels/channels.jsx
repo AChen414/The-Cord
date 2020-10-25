@@ -39,7 +39,7 @@ class Channels extends React.Component {
                         </div>
                         <div className="text-channels-list">
                             {this.props.channels.map( (channel, i) =>  (
-                                <ChannelItem channel={channel} key={`channel-${i}`} />
+                                <ChannelItem channel={channel} serverId={this.props.serverId} key={`channel-${i}`} />
                             ))}
                         </div>
                     </div>
@@ -50,7 +50,7 @@ class Channels extends React.Component {
                         Name
                         </div>
                 </div>
-                
+
                 <div className="channel-messages">   
 
                     <div className="messages">

@@ -5,7 +5,7 @@ const ChannelItem = (props) => {
 
     return(
         <>
-            <Link>
+            <Link to={`/@me/channels/${`${props.serverId}`}/${props.channel.id}`}>
                 <div className="channel">
                     <span>{props.channel.name}</span>
 
