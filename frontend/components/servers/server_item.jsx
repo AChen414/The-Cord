@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const ServerItem = (props) => {
     let abbreviated = '';
@@ -12,14 +12,16 @@ const ServerItem = (props) => {
 
     return(
         <div className="server">
-            <Link to={`/@me/channels/${props.server.id}${`/${props.server.channel_ids[0] ? props.server.channel_ids[0] : ''}`}`}>
-                <div className="server-button">
-                    <p>{abbreviated}</p>
-                    <div className="server-name-hover">
-                        <span>{props.server.name}</span>
-                    </div>
+            <NavLink
+                to={`/@me/channels/${props.server.id}${`/${props.server.channel_ids[0] ? props.server.channel_ids[0] : ''}`}`}
+                className="server-button"
+                activeStyle={{ borderRadius: '25%' }}
+            >
+                <p>{abbreviated}</p>
+                <div className="server-name-hover">
+                    <span>{props.server.name}</span>
                 </div>
-            </Link>
+            </NavLink>
         </div>
     )
 }
