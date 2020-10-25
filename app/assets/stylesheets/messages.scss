@@ -32,3 +32,26 @@
     overflow: scroll;
     overflow-x: hidden;
 }
+
+
+
+.message-form-body {
+    background-color: #40444b;
+    color: #dcddde;
+    margin-bottom: 20px;
+    cursor: text;
+    border-radius: 10px;
+    padding: 12px 18px;
+    height: 22px;
+    border: none;
+    width: 94%;
+    font-size: 16px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.message-form-input {
+    display: none;
+}

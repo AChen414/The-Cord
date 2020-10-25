@@ -1,4 +1,5 @@
 import React from 'react';
+import MessageForm from './message-form';
 
 class Messages extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Messages extends React.Component {
                         </div>
 
                     </div>
+                    <MessageForm />
                 </div>
             </div>
         )
