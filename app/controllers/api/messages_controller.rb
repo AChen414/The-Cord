@@ -10,7 +10,7 @@ class Api::MessagesController < ApplicationController
         if @message.save 
             render :show
         else
-            render json: @message.errors.full_messages, status: 422
+            render json: ['something is wrong'], status: 423
         end
     end
 
