@@ -13,8 +13,8 @@
 }
 
 .user {
-    color: var(--color-light-gray);
-    padding: 8px 5px 8px 5px;
+    color: rgba(118, 181, 250, 1);
+    padding: 8px 5px 8px 13px;
     margin-bottom: 6px;
     font-family: 'Open Sans';
     font-weight: 500;
@@ -24,4 +24,13 @@
         background-color: var(--color-channel-user-hover);
         color: white;
     }
+}
+
+.users-list > h1 {
+    color: var(--color-light-gray);
+    padding: 8px 5px 8px 5px;
+    margin-bottom: 6px;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 17px;
 }

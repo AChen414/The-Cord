@@ -77,3 +77,27 @@
     font-family: 'Open Sans';
     line-height: 20px;
 }
+
+.message {
+    padding: 12px 4px;
+    width: 100%;
+    
+    &:hover {
+        background-color: #32353b;
+    }
+}
+
+.message-user {
+    font-family: 'Open Sans';
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.message-body {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 8px;
+}

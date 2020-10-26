@@ -60,10 +60,10 @@ class Channels extends React.Component {
                         <MessagesContainer />
                         <div className="users">
                             <div className="users-list">
-                                    {this.props.users.map( (user, i) => (
-                                        <div className="user" key={user.username}>{user.username}</div>
-                                        ))}
-                                    <div>{this.props.location.pathname}</div>
+                                <h1>Users</h1>
+                                {this.props.users.map( (user, i) => (
+                                    <div className="user" key={user.username}>{user.username}</div>
+                                ))}
                             </div>
                         </div>
                     </div>

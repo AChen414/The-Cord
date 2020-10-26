@@ -7,6 +7,7 @@ class Messages extends React.Component {
         this.state = {
             messages: []
         }
+        this.ref = React.createRef();
     };
 
     componentDidMount() {
@@ -29,6 +30,7 @@ class Messages extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         console.log('messages updated')
+        this.ref.current.scrollIntoView();
     }
 
     render() {
@@ -64,6 +66,7 @@ class Messages extends React.Component {
                         </div>
 
                         {messages}
+                        <div ref={this.ref}></div>
                     </div>
                     <MessageForm 
                         currentUserId={currentUser?.id} 
