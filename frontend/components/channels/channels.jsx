@@ -11,16 +11,19 @@ class Channels extends React.Component {
     };
 
     componentDidMount() {
+        console.log('channels mounted')
         this.props.fetchAllServerInfo(this.props.serverId);
     };
 
     componentDidUpdate(prevProps) {
+        console.log('channels updated')
         if (this.props.location.pathname !== prevProps.location.pathname) {
             this.props.fetchAllServerInfo(this.props.serverId);
         };
     };
 
     render() {
+        console.log('channels rendered')
         return (
             <>
                 <div className="channels">

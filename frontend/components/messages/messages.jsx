@@ -10,13 +10,32 @@ class Messages extends React.Component {
     };
 
     componentDidMount() {
+        console.log('messages mounted')
+        let channelId = this.props.channelId;
+        // App.cable.subscriptions.create(
+        //     { channel: "ChatChannel", channel_id: channelId },
+        //     {
+        //         received: message => {
+        //             this.props.createMessage(message)
+        //         },
+        //         speak: message => {
+        //             return this.perform('speak', message)
+        //         }
+        //     }
+        // )
         this.props.fetchAllServerInfo(this.props.serverId);
         console.log(this.props.channelId)
-        this.props.fetchChannelMessages(this.props.channelId);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('messages updated')
     }
 
     render() {
+        console.log('messages rendered')
+        console.log(this.props.channelId)
         let currentChannel = this.props.channels[this.props.channelId];
+        let channelId = this.props.channelId;
         let currentUser = this.props.currentUser;
         let channelName = currentChannel?.name;
         let messages;
@@ -48,7 +67,7 @@ class Messages extends React.Component {
                     </div>
                     <MessageForm 
                         currentUserId={currentUser?.id} 
-                        channel_id={this.props.channelId} 
+                        channel_id={channelId} 
                         channelName={currentChannel?.name} 
                         createMessage={this.props.createMessage}
                     />

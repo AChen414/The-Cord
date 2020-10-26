@@ -4,6 +4,11 @@ class Api::MessagesController < ApplicationController
         render :index
     end
 
+    def show
+        @message = Message.find_by(id: params[:id])
+        render :show
+    end
+
     def create
         @message = Message.new(message_params)
 

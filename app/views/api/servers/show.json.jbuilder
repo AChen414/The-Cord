@@ -23,4 +23,14 @@ json.entities do
             end
         end
     end
+
+    json.messages do
+        @server.channels.each do |channel|
+            channel.messages.each do |message|
+                json.set! message.id do
+                    json.extract! message, :id, :body, :author_id, :channel_id
+                end
+            end
+        end
+    end
 end
