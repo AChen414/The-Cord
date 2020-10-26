@@ -18,6 +18,12 @@ class MessageForm extends React.Component {
         console.log(this.state)
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.channel_id !== this.props.channel_id) {
+            this.setState({ channel_id: this.props.channel_id })
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.state)

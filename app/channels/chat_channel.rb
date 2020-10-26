@@ -1,7 +1,7 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
-    stream_for 'chat'
+    stream_for "chat_channel#{params[:channelId]}"
   end
 
   def speak(data)
