@@ -12,9 +12,6 @@ class Channels extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllServerInfo(this.props.serverId);
-        // if (this.props.location.pathname === `/@me/channels/${this.props.serverId}`) {
-
-        // }
     };
 
     componentDidUpdate(prevProps) {

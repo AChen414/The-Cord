@@ -5,12 +5,22 @@ class MessageForm extends React.Component {
         super(props);
         this.state = {
             body: '',
+            author_id: this.props.currentUserId,
+            channel_id: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({ channel_id: this.props.channel_id })
+    }
+
     handleSubmit(e) {
         e.preventDefault();
+        console.log(this.state)
+        const message = Object.assign({}, this.state)
+        if (message.body.length) this.props.createMessage(message);
+        this.setState({ body: '' });
     }
 
     handleChange(type) {
@@ -28,7 +38,7 @@ class MessageForm extends React.Component {
                         onChange={this.handleChange('body')}
                         value={this.state.body}
                         className="message-form-body"
-                        placeholder="Message"
+                        placeholder={'Message #' + this.props.channelName}
                     />
                     <input type="submit" className="message-form-input"/>
                 </form>
