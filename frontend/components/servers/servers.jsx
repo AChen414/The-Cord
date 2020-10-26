@@ -15,7 +15,7 @@ class Servers extends React.Component {
 
     componentDidUpdate(prevProps) {
         if(this.props.servers.length !== prevProps.servers.length) {
-            this.props.fetchServers();
+            // this.props.fetchServers();
         }
     }
 

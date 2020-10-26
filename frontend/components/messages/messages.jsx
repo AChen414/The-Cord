@@ -7,10 +7,15 @@ class Messages extends React.Component {
 
     };
 
+    componentDidMount() {
+        this.props.fetchAllServerInfo(this.props.serverId);
+    }
+
     render() {
         console.log(this.props);
         const { channelId, channels } = this.props;
-        console.log(channels.channelId)
+        console.log(channels)
+        console.log(channelId)
         return(
             <div className="message-box">
                 <div className="message-list">
