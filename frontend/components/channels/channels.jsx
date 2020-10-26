@@ -24,6 +24,9 @@ class Channels extends React.Component {
 
     render() {
         console.log('channels rendered')
+        let channel = this.props.channels;
+        let channelId = this.props.channelId;
+        let currentChannel = channel.channelId?.name;
         return (
             <>
                 <div className="channels">
@@ -47,7 +50,7 @@ class Channels extends React.Component {
 
                 <div className="top-nav-bar">
                     <div className="channel-name">
-                        Name
+                        #{currentChannel}
                         </div>
                 </div>
 

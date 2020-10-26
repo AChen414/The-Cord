@@ -28,7 +28,10 @@ class MessageForm extends React.Component {
         e.preventDefault();
         console.log(this.state)
         const message = Object.assign({}, this.state)
-        if (message.body.length) this.props.createMessage(message);
+        if (message.body.length) {
+            this.props.createMessage(message)
+            // App.cable.subscriptions.subscriptions[0].speak(message)
+        };
         this.setState({ body: '' });
     }
 
