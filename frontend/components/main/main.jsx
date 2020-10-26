@@ -15,8 +15,8 @@ class Main extends React.Component {
             <div className="main-page">
                 <ServersContainer />
                 <FooterContainer />
-                <Route path="/@me/channels/:server_id" component={ChannelsContainer} />
-                <Route path="/@me/channels/:server_id/:channel_id" component={MessagesContainer}/>
+                {/* <Route path="/@me/channels/:server_id" component={ChannelsContainer} /> */}
+                <Route path="/@me/channels/:server_id/:channel_id" component={ChannelsContainer}/>
             </div>
         )
     };

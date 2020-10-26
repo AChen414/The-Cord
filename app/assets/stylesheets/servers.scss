@@ -44,9 +44,11 @@
     color: var(--color-server-off-white);
     font-family: 'Open Sans';
     font-weight: 600;
+    text-decoration: none;
 
     &:hover {
         border-radius: 25%;
+        background-color: #7289da;
         cursor: pointer;
     }
 }

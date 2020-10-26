@@ -1,0 +1,79 @@
+.messages {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.message-box {
+    background-color: #36393f;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 61%;
+    padding-left: 20px;
+}
+
+.message-list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: scroll;
+    padding: 50px 5px 5px;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 96%;
+    height: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-bottom: 1px solid #414449;
+}
+
+.message-form {
+    margin: 20px 0px;
+}
+
+.message-form-body {
+    background-color: #40444b;
+    color: #dcddde;
+    cursor: text;
+    border-radius: 10px;
+    padding: 12px 18px;
+    height: 22px;
+    border: none;
+    width: 94%;
+    font-size: 16px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.message-form-input {
+    display: none;
+}
+
+.welcome {
+    margin: 15px 0px;
+}
+
+#channel-welcome {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Open Sans';
+    color: white;
+    line-height: 40px;
+    margin: 8px 0;
+}
+
+#channel-welcome-start {
+    color: #b9bbbe;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    line-height: 20px;
+}
