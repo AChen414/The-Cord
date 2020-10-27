@@ -5,7 +5,7 @@
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 100;
+  z-index: 1000;
 }
 
 .modal-child {
@@ -14,7 +14,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 ///////////////////// Add Server Modal //////////////////////
 .add-server-form {
     display: flex;
@@ -120,5 +119,112 @@
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-color: var(--color-add-server-name);
+    }
+}
+
+/////////////////////// Add Channel Form /////////////////////////@at-root
+
+.add-channel-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #36393f;
+    height: 100%;
+    width: 480px;
+    padding: 28px 40px;
+    border-radius: 8px;
+}
+
+.add-channel-form > h1 {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 40px;
+}
+
+.channel-form-name {
+    padding-bottom: 20px;
+}
+
+.channel-form-name label {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.channel-form-name span {
+    font-size: 11px;
+    color: #8e9297;
+    font-weight: 700;
+    padding-bottom: 8px;
+    font-family: 'Open Sans';
+}
+
+.channel-form-name input {
+    background-color: #303338;
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    font-family: 'Open Sans';
+    border-style: solid;
+    border-width: 1px;
+    border-color: #212327;
+    padding: 9px 6px;
+    margin-bottom: 72px;
+    border-radius: 3px;
+    color: #dcddde;
+    
+    &:focus {
+        outline: none;
+        border-color: #7289da;
+    }
+}
+
+.add-channel-form .form-bottom {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #2f3136;
+    position: absolute;
+    right: 0px;
+    bottom: -1px;
+    height: 80px;
+    border-radius: 8px;
+
+}
+
+.channel-form-submit {
+    background-color: var(--color-purple);
+    color: white;
+    border: 0;
+    padding: 11px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 36px;
+    border-radius: 5px;
+    width: auto;
+    font-weight: 200;
+    font-size: 14px;
+    padding: 0px 25px;
+
+    &:hover {
+        background-color: var(--color-hover-purple);
+        cursor: pointer;
+    }
+}
+
+.channel-form-back {
+    margin: 32px 30px;
+}
+
+.channel-form-back > span {
+    font-family: 'Open Sans';
+    color: white;
+    font-weight: 500;
+
+    &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid white;
     }
 }

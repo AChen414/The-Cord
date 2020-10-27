@@ -22,34 +22,36 @@ class Servers extends React.Component {
     render() {
         const { servers, fetchAllServerInfo } = this.props
         return(
-            <div className="servers">
-                <div className="server-buttons">
-                    <NavLink
-                        exact to={`/@me`}
-                        className="server-button"
-                        activeStyle={{ borderRadius: '25%', backgroundColor: '#7289da' }}
-                    >
-                        <p>Home</p>
-                    </NavLink>
-                    <div className="separator"></div>
-                    <div className="servers-list">
-                        <ul>
-                            {servers.map( (server, i) => (
-                                <ServerItem server={server} key={`server-${i}`} />
-                            ))}
-                        </ul>
+            <>
+                <div className="servers">
+                    <div className="server-buttons">
+                        <NavLink
+                            exact to={`/@me`}
+                            className="server-button"
+                            activeStyle={{ borderRadius: '25%', backgroundColor: '#7289da' }}
+                        >
+                            <p>Home</p>
+                        </NavLink>
+                        <div className="separator"></div>
+                        <div className="servers-list">
+                            <ul>
+                                {servers.map( (server, i) => (
+                                    <ServerItem server={server} key={`server-${i}`} />
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="separator"></div>
+                        <div 
+                            className="server-button"
+                            onClick={() => dispatch(openModal('Add Server'))}
+                            id="add-server-button"
+                        >
+                            +
+                        </div>
                     </div>
-                    <div className="separator"></div>
-                    <div 
-                        className="server-button"
-                        onClick={() => dispatch(openModal('Add Server'))}
-                        id="add-server-button"
-                    >
-                        +
-                    </div>
-                    <Modal />
                 </div>
-            </div>
+                <Modal />
+            </>
         )
     };
 };

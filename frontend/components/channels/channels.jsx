@@ -38,7 +38,7 @@ class Channels extends React.Component {
                     <div className="channels-list">
                         <div className="text-channels">
                             <span>TEXT CHANNELS</span>
-                            <span className="add-channel">+</span>
+                            <span className="add-channel" onClick={() => dispatch(openModal('Add Channel'))}>+</span>
                         </div>
                         <div className="text-channels-list">
                             {this.props.channels.map( (channel, i) =>  (
@@ -68,6 +68,7 @@ class Channels extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Modal />
             </>
         );
     };
