@@ -42,7 +42,14 @@ class Channels extends React.Component {
                         </div>
                         <div className="text-channels-list">
                             {this.props.channels.map( (channel, i) =>  (
-                                <ChannelItem channel={channel} serverId={this.props.serverId} key={`channel-${i}`} />
+                                <ChannelItem 
+                                    channel={channel} 
+                                    serverId={this.props.serverId} 
+                                    server={this.props.server} 
+                                    currentUser={this.props.currentUser}
+                                    openModal={openModal}
+                                    key={`channel-${i}`} 
+                                />
                             ))}
                         </div>
                     </div>

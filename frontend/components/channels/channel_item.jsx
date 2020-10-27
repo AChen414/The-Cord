@@ -2,7 +2,14 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const ChannelItem = (props) => {
-
+    let cog = 
+        <>
+            <img 
+            src='https://the-cord-dev.s3-us-west-1.amazonaws.com/cog.png'
+            onClick={() => dispatch(props.openModal('Edit Channel'))}
+            />
+            <div className="channel-edit-hover">Edit Channel</div>
+        </>
     return(
         <>
             <NavLink
@@ -15,7 +22,8 @@ const ChannelItem = (props) => {
                  }}
             >
                 <span>{props.channel.name}</span>
-            </NavLink>
+                {props.server.owner_id === props.currentUser.id ? cog : ''}
+            </NavLink> 
         </>
     )
 };
