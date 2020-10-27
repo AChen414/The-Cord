@@ -12,6 +12,8 @@ class AddChannelForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log(this.state)
+        console.log(this.props.channels)
         const newChannel = Object.assign({}, this.state);
         this.props.createChannel(newChannel).then(() => this.props.closeModal());
     }

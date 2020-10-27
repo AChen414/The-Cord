@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AddChannelForm from './add_channel_form';
-import {  } from '../../actions/channel_actions';
+import { createChannel } from '../../actions/channel_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.session.currentUser,
         formType: 'Add Channel',
         channels: Object.values(state.entities.channels),
-        serverId: Object.values(state.entities.channels)[0].serverId
+        serverId: Object.values(state.entities.channels)[0].server_id
     }
 }
 

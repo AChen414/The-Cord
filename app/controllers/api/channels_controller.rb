@@ -13,7 +13,7 @@ class Api::ChannelsController < ApplicationController
         @channel = Channel.new(channel_params)
 
         if @channel.save
-            render :show
+            render :create
         else
             render json: ["Channel name cannot be blank"], status: 422
         end
