@@ -6,7 +6,7 @@ const channelsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_ALL_SERVER_INFO:
-            return Object.assign({}, state, action.allServerInfo.entities.channels);
+            return action.allServerInfo.entities.channels;
         case RECEIVE_CHANNEL_MESSAGES:
             return action.messages.entities.channels;
         case RECEIVE_CHANNEL:
