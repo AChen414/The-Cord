@@ -228,3 +228,16 @@
         border-bottom: 1px solid white;
     }
 }
+
+/////////////// EDIT CHANNEL FORM /////////////////////
+
+.edit-channel-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #36393f;
+    height: 100%;
+    width: 480px;
+    padding: 28px 40px;
+    border-radius: 8px;
+}

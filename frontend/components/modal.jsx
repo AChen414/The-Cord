@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AddServerFormContainer from './servers/add_server_form_container';
-import AddChannelFormContainer from './channels/add_channel_container';
+import AddChannelFormContainer from './channels/add_channel_form_container';
+import EditChannelFormContainer from './channels/edit_channel_form_container';
 import { closeModal } from '../actions/modal_actions';
 
 const clearModalBackground = {
@@ -12,7 +13,7 @@ const clearModalBackground = {
     right: 0,
 }
 
-const Modal = ({modal, closeModal}) => {
+const Modal = ({modal, closeModal}, props) => {
     if (!modal) {
         return null;
     };
@@ -27,6 +28,9 @@ const Modal = ({modal, closeModal}) => {
             break;
         case 'Add Channel':
             component = <AddChannelFormContainer />;
+            break;
+        case 'Edit Channel':
+            component = <EditChannelFormContainer props={props}/>;
             break;
         default:
             return null;

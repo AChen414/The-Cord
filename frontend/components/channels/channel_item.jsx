@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+
 const ChannelItem = (props) => {
     let cog = 
         <>
@@ -10,6 +11,7 @@ const ChannelItem = (props) => {
             />
             <div className="channel-edit-hover">Edit Channel</div>
         </>
+    
     return(
         <>
             <NavLink

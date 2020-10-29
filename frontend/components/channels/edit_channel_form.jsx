@@ -1,19 +1,24 @@
 import React from 'react';
 
-class AddChannelForm extends React.Component {
+class EditChannelForm extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        console.log(this.props);
+        console.log(this.props.channel)
         this.state = {
             name: '',
-            server_id: this.props.serverId
+            server_id: null,
+            id: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const newChannel = Object.assign({}, this.state);
-        this.props.createChannel(newChannel).then(() => this.props.closeModal());
+        const updatedChannel = Object.assign({}, this.state);
+        console.log(updatedChannel, 'bouta submit');
+        this.props.editChannel(updatedChannel);
+        this.props.closeModal();
     }
 
     handleInput(field) {
@@ -22,29 +27,40 @@ class AddChannelForm extends React.Component {
         }
     }
 
+    componentDidMount() {
+        if (this.props.channel) {
+            this.setState({
+                name: this.props.channel.name,
+                server_id: this.props.serverId,
+                id: this.props.channelId
+            })
+        }
+        console.log(this.state)
+    }
+
     render() {
         return(
-            <div className="add-channel-form">
-                <h1>CREATE TEXT CHANNEL</h1>
+            <div className="edit-channel-form">
+                <h1>EDIT TEXT CHANNEL</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="channel-form-name">
                         <label>
-                            <span>Channel Name</span>    
+                            <span>Channel Name</span>
                             <span className="channel-form-name-err">{}</span>
-                            <input 
-                                type="text" 
+                            <input
+                                type="text"
                                 className="channel-form-input"
                                 value={this.state.name}
                                 onChange={this.handleInput('name')}
                             />
-                        </label>    
-                    </div>  
+                        </label>
+                    </div>
                     <div className="form-bottom">
                         <div className="channel-form-back" onClick={() => this.props.closeModal()}>
                             <span>Cancel</span>
                         </div>
                         <button className="channel-form-submit">
-                            Create Channel
+                            Update Channel
                         </button>
                     </div>
                 </form>
@@ -53,4 +69,4 @@ class AddChannelForm extends React.Component {
     }
 }
 
-export default AddChannelForm;
+export default EditChannelForm;

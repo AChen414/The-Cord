@@ -12,3 +12,11 @@ export const createChannel = (channel) => {
         data: {channel}
     })
 }
+
+export const editChannel = (channel) => {
+    return $.ajax({
+        method: 'PATCH',
+        url: `/api/channels/${channel.id}`,
+        data: {channel}
+    })
+}

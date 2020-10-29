@@ -39,6 +39,7 @@ class Channels extends React.Component {
                         <div className="text-channels">
                             <span>TEXT CHANNELS</span>
                             <span className="add-channel" onClick={() => dispatch(openModal('Add Channel'))}>+</span>
+                            <div className="channel-add-hover">Create Channel</div>
                         </div>
                         <div className="text-channels-list">
                             {this.props.channels.map( (channel, i) =>  (

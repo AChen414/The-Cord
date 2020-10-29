@@ -28,3 +28,9 @@ export const createChannel = (channel) => dispatch => (
         dispatch(receiveChannel(channel))
     ))
 )
+
+export const editChannel = (channel) => dispatch => {
+    APIChannelUtil.editChannel(channel).then((channel) => (
+        dispatch(receiveChannel(channel))
+    ))
+}

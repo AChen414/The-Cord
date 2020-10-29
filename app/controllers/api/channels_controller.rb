@@ -24,7 +24,14 @@ class Api::ChannelsController < ApplicationController
     end
 
     def update
-
+        @channel = Channel.find_by(id: params[:id])
+        
+        if @channel 
+            @channel.update(channel_params)
+            render :create
+        else
+            render json: ['Error updating channel'], status: 422
+        end
     end
 
     private
