@@ -81,7 +81,7 @@
 .message {
     padding: 12px 4px;
     width: 100%;
-    
+    position: relative;
     &:hover {
         background-color: #32353b;
     }
@@ -100,4 +100,27 @@
     font-size: 16px;
     font-weight: 400;
     padding-top: 8px;
+}
+
+.message:hover .edit-message {
+    display: initial;
+}
+
+.edit-message {
+    display: none;
+    position: absolute;
+    bottom: 16px;
+    right: 40px;
+    padding: 1px;
+
+    &:hover {
+        background-color: #8e9297;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+}
+
+.edit-message > img {
+    mix-blend-mode: multiply;
+    width: 16px;
 }

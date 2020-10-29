@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageForm from './message-form';
+import Message from './message';
 
 class Messages extends React.Component {
     constructor(props) {
@@ -47,12 +48,18 @@ class Messages extends React.Component {
                 return message.channel_id === currentChannel.id;
             })
             messages = channelMessages.map((message, i) => {
-                return (
-                    <div className='message' key={i}>
-                        <div className="message-user">{this.props.users[message.author_id]?.username}</div>
-                        <div className="message-body">{message.body}</div>
-                    </div>
-                )
+                return <Message 
+                    message={message} 
+                    author={this.props.users[message.author_id]?.username}
+                    currentUser={this.props.currentUser}    
+                    key={i}
+                />
+                // return (
+                //     <div className='message' key={i}>
+                //         <div className="message-user">{this.props.users[message.author_id]?.username}</div>
+                //         <div className="message-body">{message.body}</div>
+                //     </div>
+                // )
             })
         }
 
