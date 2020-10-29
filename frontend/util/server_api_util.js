@@ -19,3 +19,10 @@ export const fetchServer = serverId => {
         url: `api/servers/${serverId}`
     })
 }
+
+export const destroyServer = serverId => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `/api/servers/${serverId}`
+    })
+}

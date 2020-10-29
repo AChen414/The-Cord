@@ -28,6 +28,12 @@ class Api::ServersController < ApplicationController
 
     def destroy
         @server = Server.find_by(id: params[:id])
+
+        if @server
+            @server.destroy
+        else
+            render json: ['Server deletion error'], status: 424
+        end
     end
 
     private

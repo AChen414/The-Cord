@@ -28,12 +28,29 @@ class Channels extends React.Component {
         let channelId = this.props.channelId;
         let currentChannel = channel[channelId]?.name;
         console.log("current channel: ", currentChannel)
+        let serverDelete;
+        if (this.props.currentUser.id === this.props.server.owner_id) {
+            serverDelete = 
+                <div className="server-delete">
+                    <div 
+                        className="delete-server"
+                        onClick={() => dispatch(openModal('Delete Server'))}
+                    >
+                        Delete Server
+                    </div>
+                    <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/Red_X.svg"/>
+                </div>
+        }
+        
         return (
             <>
                 <div className="channels">
                     <div className="server-name-header">
                         <h1>{this.props.server.name}</h1>
                         <span>V</span>
+                        <div className="server-options">
+                            { serverDelete }
+                        </div>
                     </div>
                     <div className="line"></div>
                     <div className="channels-list">

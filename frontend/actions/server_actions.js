@@ -4,6 +4,7 @@ export const RECEIVE_SERVERS = 'RECEIVE_SERVERS';
 export const RECEIVE_SERVER = 'RECEIVE_SERVER';
 export const RECEIVE_SERVER_ERRORS = 'RECEIVE_SERVER_ERRORS';
 export const RECEIVE_ALL_SERVER_INFO = 'RECEIVE_ALL_SERVER_INFO';
+export const REMOVE_SERVER = 'REMOVE_SERVER';
 
 const receiveServers = servers => {
     return {
@@ -23,6 +24,13 @@ const receiveAllServerInfo = allServerInfo => {
     return {
         type: RECEIVE_ALL_SERVER_INFO,
         allServerInfo
+    }
+}
+
+export const removeServer = serverId => {
+    return {
+        type: REMOVE_SERVER,
+        serverId
     }
 }
 
@@ -52,3 +60,9 @@ export const fetchAllServerInfo = serverId => dispatch => (
         dispatch(receiveAllServerInfo(server))
     ))
 );
+
+export const deleteServer = serverId => dispatch => (
+    APIServerUtil.destroyServer(serverId).then((serverId) => (
+        dispatch(removeServer(serverId))
+    ))
+)

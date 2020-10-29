@@ -47,6 +47,9 @@ class Servers extends React.Component {
                             id="add-server-button"
                         >
                             +
+                            <div className="server-name-hover">
+                                <span>Create a Server</span>
+                            </div>
                         </div>
                     </div>
                 </div>
