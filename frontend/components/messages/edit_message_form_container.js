@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import EditMessageForm from './edit_message_form';
 import { closeModal } from '../../actions/modal_actions';
-import { } from '../../actions/message_actions';
+import { editMessage, deleteMessage } from '../../actions/message_actions';
 
 const mSTP = (state) => {
     return {
@@ -15,7 +15,8 @@ const mSTP = (state) => {
 const mDTP = dispatch => {
     return {
         editMessage: (message) => dispatch(editMessage(message)),
-        deleteMessage: (messageId) => dispatch(deleteMessage(messageId))
+        deleteMessage: (messageId) => dispatch(deleteMessage(messageId)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 

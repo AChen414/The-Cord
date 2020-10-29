@@ -20,11 +20,24 @@ class Api::MessagesController < ApplicationController
     end
 
     def update
+        @message = Message.find_by(id: params[:id])
 
+        if @message 
+            @message.update(message_params)
+            render :show
+        else
+            render json: ["Error in updating message"], status: 423
+        end
     end
 
     def destroy
+        @message = Message.find_by(id: params[:id])
 
+        if @message
+            @message.destroy
+        else
+            render json: ["Error in deleting message"], status: 423
+        end
     end
 
     private 

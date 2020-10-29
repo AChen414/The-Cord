@@ -16,13 +16,15 @@ class EditMessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log(this.state)
         const updatedMessage = Object.assign({}, this.state);
         this.props.editMessage(updatedMessage).then(this.props.closeModal());
     }
 
     handleDelete(e) {
-        e.preventDefault();
-        
+        console.log(this.props.messageId.id)
+        this.props.deleteMessage(this.props.messageId.id);
+        this.props.closeModal();
     }
 
     handleInput(field) {
@@ -33,7 +35,6 @@ class EditMessageForm extends React.Component {
 
     componentDidMount() {
         let currentMessage = this.props.messages[this.props.messageId.id];
-        console.log(currentMessage, 'currentMessage')
         console.log(this.props.messages, this.props.messageId)
         this.setState({
             body: currentMessage.body,
@@ -41,7 +42,6 @@ class EditMessageForm extends React.Component {
             channel_id: currentMessage.channel_id,
             id: currentMessage.id
         })
-        console.log(this.state)
     }
 
     render() {
