@@ -11,6 +11,7 @@ class EditChannelForm extends React.Component {
             id: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleSubmit(e) {
@@ -18,6 +19,12 @@ class EditChannelForm extends React.Component {
         const updatedChannel = Object.assign({}, this.state);
         console.log(updatedChannel, 'bouta submit');
         this.props.editChannel(updatedChannel);
+        this.props.closeModal();
+    }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.deleteChannel(this.props.channelId)
         this.props.closeModal();
     }
 
@@ -42,6 +49,7 @@ class EditChannelForm extends React.Component {
         return(
             <div className="edit-channel-form">
                 <h1>EDIT TEXT CHANNEL</h1>
+                <h2 onClick={() => this.props.closeModal()}>X</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="channel-form-name">
                         <label>
@@ -56,8 +64,13 @@ class EditChannelForm extends React.Component {
                         </label>
                     </div>
                     <div className="form-bottom">
-                        <div className="channel-form-back" onClick={() => this.props.closeModal()}>
-                            <span>Cancel</span>
+                        <div className="channel-form-back">
+                            <span 
+                                className="channel-form-delete"
+                                onClick={this.handleDelete}
+                            >
+                                Delete Channel
+                            </span>
                         </div>
                         <button className="channel-form-submit">
                             Update Channel

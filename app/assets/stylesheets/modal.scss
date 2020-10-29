@@ -241,3 +241,55 @@
     padding: 28px 40px;
     border-radius: 8px;
 }
+
+.edit-channel-form > h1 {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 40px;
+}
+
+.edit-channel-form > h2 {
+    font-family: sans-serif;
+    color: #8e9297;
+    font-weight: 800;
+    position: absolute;
+    right: 40px;
+    padding: 3px;
+
+    &:hover {
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.channel-form-delete {
+    font-size: 14px;
+    font-family: 'Open Sans';
+    font-weight: 200;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: auto;
+    background-color: #f04847;
+    padding: 10px 25px;
+
+    &:hover {
+        cursor: pointer;
+        opacity: .85;
+    }
+}
+
+.edit-channel-form .form-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #2f3136;
+    position: absolute;
+    right: 0px;
+    bottom: -1px;
+    height: 80px;
+    border-radius: 8px;
+
+}

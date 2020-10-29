@@ -26,7 +26,8 @@ class Channels extends React.Component {
         console.log('channels rendered')
         let channel = this.props.channels;
         let channelId = this.props.channelId;
-        let currentChannel = channel.channelId?.name;
+        let currentChannel = channel[channelId]?.name;
+        console.log("current channel: ", currentChannel)
         return (
             <>
                 <div className="channels">

@@ -20,7 +20,13 @@ class Api::ChannelsController < ApplicationController
     end
 
     def destroy
+        @channel = Channel.find_by(id: params[:id])
 
+        if @channel
+            @channel.destroy
+        else
+            render json: ["Error in deleting channel"], status: 423
+        end
     end
 
     def update

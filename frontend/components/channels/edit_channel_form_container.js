@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EditChannelForm from './edit_channel_form';
-import { editChannel } from '../../actions/channel_actions';
+import { editChannel, deleteChannel } from '../../actions/channel_actions';
 import { closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -16,7 +16,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         closeModal: () => dispatch(closeModal()),
-        editChannel: channel => dispatch(editChannel(channel))
+        editChannel: channel => dispatch(editChannel(channel)),
+        deleteChannel: channelId => dispatch(deleteChannel(channelId))
     }
 }
 
