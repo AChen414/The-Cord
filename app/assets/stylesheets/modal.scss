@@ -293,3 +293,88 @@
     border-radius: 8px;
 
 }
+
+/////////////////////////// EDIT MESSAGE FORM //////////////////////
+
+.edit-message-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #36393f;
+    height: 100%;
+    width: 480px;
+    padding: 28px 40px;
+    border-radius: 8px;
+}
+
+.edit-message-form > h1 {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 40px;
+}
+
+.edit-message-form > h2 {
+    font-family: sans-serif;
+    color: #8e9297;
+    font-weight: 800;
+    position: absolute;
+    right: 40px;
+    padding: 3px;
+
+    &:hover {
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.message-form-edit {
+    padding-bottom: 20px;
+}
+
+.message-form-edit label {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.message-form-edit span {
+    font-size: 11px;
+    color: #8e9297;
+    font-weight: 700;
+    padding-bottom: 8px;
+    font-family: 'Open Sans';
+}
+
+.message-form-edit input {
+    background-color: #303338;
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    font-family: 'Open Sans';
+    border-style: solid;
+    border-width: 1px;
+    border-color: #212327;
+    padding: 9px 6px;
+    margin-bottom: 72px;
+    border-radius: 3px;
+    color: #dcddde;
+    
+    &:focus {
+        outline: none;
+        border-color: #7289da;
+    }
+}
+
+.edit-message-form .form-bottom {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #2f3136;
+    position: absolute;
+    right: 0px;
+    bottom: -1px;
+    height: 80px;
+    border-radius: 8px;
+}
