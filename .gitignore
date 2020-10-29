@@ -27,3 +27,6 @@ bundle.js.map
 # Ignore application configuration
 /config/application.yml
 /gems
+
+# Current issues with the app
+issues
