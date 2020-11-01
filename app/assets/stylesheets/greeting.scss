@@ -33,19 +33,26 @@ body {
     justify-content: space-between;
 }
 
-.front-page-header > span {
-    color: white;
+.front-page-header > img {
+    width: 150px;
+}
+
+.front-page-right {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
 }
 
 .linkedin {
-  height: 30px;
+  height: 34px;
 }
 
 .github {
   height: 25px;
+  padding-top: 5px;
 }
 
-.front-page-header > .header-login {
+.front-page-header .header-login {
     border: 2px solid var(--color-off-white);
     border-radius: 20px;
     padding: 5px 17px 7px;

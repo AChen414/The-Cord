@@ -15,16 +15,17 @@ const Greeting = ({ currentUser, login }) => {
         <div className="front-page-container">
             <div className="front-page">
                 <header className="front-page-header">
-                    <span>Discord</span>
+                    <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/Discord_logo.svg" />
+                    <div className="front-page-right">
+                        <a href="https://www.linkedin.com/in/andrew-chen-787534171/">
+                            <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/linkedIn.png" className="linkedin" />
+                        </a>
 
-                    <a href="https://www.linkedin.com/in/andrew-chen-787534171/">
-                        <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/linkedIn.png" className="linkedin" />
-                    </a>
-
-                    <a href="https://www.github.com/AChen414">
-                        <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/github.png" className="github" />
-                    </a>
-                    <Link to="/login" className="header-login">Login</Link>
+                        <a href="https://www.github.com/AChen414">
+                            <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/github.png" className="github" />
+                        </a>
+                        <Link to="/login" className="header-login">Login</Link>
+                    </div>
                 </header>
                 <main className="front-page-description">
                     <h1>A new way to chat with your communities and friends</h1>

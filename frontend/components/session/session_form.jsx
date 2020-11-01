@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
 
         return(
             <div className="session-page">
-                <Link to="/">Discord</Link>
+                <Link to="/"><img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/Discord_logo.svg" /></Link>
                 
                 <div className="session">
                     <div className="session-form">

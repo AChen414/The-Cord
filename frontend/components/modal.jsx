@@ -34,7 +34,10 @@ const Modal = ({modal, closeModal}, props) => {
             component = <EditChannelFormContainer props={props}/>;
             break;
         case 'Edit Message':
-            component = <EditMessageFormContainer props={props} />
+            component = <EditMessageFormContainer props={props} />;
+            break;
+        case 'Invite Server':
+            component = <InviteServerContainer />;
             break;
         default:
             return null;

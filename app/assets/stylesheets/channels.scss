@@ -56,18 +56,32 @@
     top: 7.5vh;
     background-color: #18191c;
     border-radius: 4px;
-    padding: 11px 0px;
     z-index: 10;
+}
+
+.server-options > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 20px;
+    padding: 10px;
 
     &:hover {
         background-color: #7289da;
+        border-radius: 3px;
     }
 }
 
-.server-delete {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
+.server-invite-code > div {
+    font-family: 'Open Sans';
+    font-size: 13px;
+    color: white;
+    font-weight: 700;
+}
+
+.server-invite-code > .invite-icon {
+    font-size: 28px;
 }
 
 .delete-server {

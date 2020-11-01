@@ -31,16 +31,16 @@ class Channels extends React.Component {
         let serverDelete;
         if (this.props.currentUser.id === this.props.server.owner_id) {
             serverDelete = 
-                <div className="server-delete">
-                    <div 
-                        className="delete-server"
-                        onClick={() => dispatch(openModal('Delete Server'))}
-                    >
-                        Delete Server
-                    </div>
+                <div className="server-delete" onClick={() => dispatch(openModal('Delete Server'))}>
+                    <div className="delete-server">Delete Server</div>
                     <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/Red_X.svg"/>
                 </div>
         }
+        const serverInvite = 
+            <div class="server-invite-code" onClick={() => dispatch(openModal('Invite Server'))}>
+                <div className="invite">Invite People</div>
+                <div className="invite-icon">+</div>
+            </div>
         
         return (
             <>
@@ -49,6 +49,7 @@ class Channels extends React.Component {
                         <h1>{this.props.server.name}</h1>
                         <span>V</span>
                         <div className="server-options">
+                            { serverInvite }
                             { serverDelete }
                         </div>
                     </div>
