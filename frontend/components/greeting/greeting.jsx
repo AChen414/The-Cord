@@ -16,6 +16,14 @@ const Greeting = ({ currentUser, login }) => {
             <div className="front-page">
                 <header className="front-page-header">
                     <span>Discord</span>
+
+                    <a href="https://www.linkedin.com/in/andrew-chen-787534171/">
+                        <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/linkedIn.png" className="linkedin" />
+                    </a>
+
+                    <a href="https://www.github.com/AChen414">
+                        <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/github.png" className="github" />
+                    </a>
                     <Link to="/login" className="header-login">Login</Link>
                 </header>
                 <main className="front-page-description">

@@ -37,7 +37,15 @@ body {
     color: white;
 }
 
-.front-page-header > a {
+.linkedin {
+  height: 30px;
+}
+
+.github {
+  height: 25px;
+}
+
+.front-page-header > .header-login {
     border: 2px solid var(--color-off-white);
     border-radius: 20px;
     padding: 5px 17px 7px;
