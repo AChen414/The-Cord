@@ -4,6 +4,7 @@ import AddServerFormContainer from './servers/add_server_form_container';
 import AddChannelFormContainer from './channels/add_channel_form_container';
 import EditChannelFormContainer from './channels/edit_channel_form_container';
 import EditMessageFormContainer from './messages/edit_message_form_container';
+import InviteServerContainer from './servers/invite_server';
 import { closeModal } from '../actions/modal_actions';
 
 const clearModalBackground = {
