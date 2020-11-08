@@ -37,7 +37,7 @@ class Channels extends React.Component {
                 </div>
         }
         const serverInvite = 
-            <div class="server-invite-code" onClick={() => dispatch(openModal('Invite Server'))}>
+            <div className="server-invite-code" onClick={() => dispatch(openModal('Invite Server'))}>
                 <div className="invite">Invite People</div>
                 <div className="invite-icon">+</div>
             </div>
