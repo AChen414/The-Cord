@@ -11,23 +11,19 @@ class Channels extends React.Component {
     };
 
     componentDidMount() {
-        console.log('channels mounted')
         this.props.fetchAllServerInfo(this.props.serverId);
     };
 
     componentDidUpdate(prevProps) {
-        console.log('channels updated')
         if (this.props.location.pathname !== prevProps.location.pathname) {
             this.props.fetchAllServerInfo(this.props.serverId);
         };
     };
 
     render() {
-        console.log('channels rendered')
         let channel = this.props.channels;
         let channelId = this.props.channelId;
         let currentChannel = channel[channelId]?.name;
-        console.log("current channel: ", currentChannel)
         let serverDelete;
         if (this.props.currentUser.id === this.props.server.owner_id) {
             serverDelete = 
