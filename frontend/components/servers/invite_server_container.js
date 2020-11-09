@@ -4,7 +4,9 @@ import InviteServer from './invite_server';
 
 const mSTP = state => {
     return {
-        formType: 'Invite Server',       
+        formType: 'Invite Server', 
+        servers: state.entities.servers,
+        serverId: ownProps.match.params.server_id
     }
 }
 

@@ -6,16 +6,17 @@ class InviteServer extends React.Component {
     }
 
     render() {
+        currentServer = this.props.servers[this.props.serverId]
         return(
             <div className="invite-server-modal">
-                <h1 className="invite-server-title">Invite Friends to </h1>
+                <h1 className="invite-server-title">Invite Friends to {currentServer?.name}</h1>
                 <div className="invite-code-container">
                     <label>
                         <span>Invite Code</span>
                         <input 
                             type="text"
                             className="invite-code-input"
-                            value="123123"
+                            value={currentServer.invite_code}
                             readOnly
                         />
                     </label>

@@ -5,7 +5,8 @@ class AddServerForm extends React.Component {
         super(props);
         this.state = { 
             name: `${this.props.currentUser.username}\'s Server`,
-            owner_id: this.props.currentUser.id
+            owner_id: this.props.currentUser.id,
+            invite_code: Math.random().toString(32).toUpperCase().slice(5)
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     };
