@@ -41,7 +41,7 @@
   "homepage": "https://github.com/AChen414/Fullstack-Discord-Clone#readme",
   "description": "",
   "engines": {
-    "node": "12.16.3",
+    "node": "10.13.0",
     "npm": "6.14.4"
   },
   "devDependencies": {
