@@ -2,11 +2,10 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import InviteServer from './invite_server';
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return {
         formType: 'Invite Server', 
-        servers: state.entities.servers,
-        serverId: ownProps.match.params.server_id
+        server: state.ui.modalProps
     }
 }
 

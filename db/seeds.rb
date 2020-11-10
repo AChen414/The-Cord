@@ -18,8 +18,8 @@ carlos = User.create!({ email: 'carlos@aa.com', username: 'Carlos', password: '1
 scooby = User.create!({ email: 'scooby@gmail.com', username: 'ScoobyJrue', password: '123456'})
 shaky = User.create!({ email: 'shaky@gmail.com', username: 'ShakyWarrior', password: '123456'})
 
-demo_server = Server.create!({ name: "demo's server", owner_id: demo.id, invite_code: TVCV0F4P })
-andrew_server = Server.create!({ name: "Andrew's server", owner_id: andrew.id, invite_code: 6UBITP })
+demo_server = Server.create!({ name: "demo's server", owner_id: demo.id, invite_code: 'TVCV0F4P' })
+andrew_server = Server.create!({ name: "Andrew's server", owner_id: andrew.id, invite_code: '6UBITP' })
 
 demo_server_demo = ServerUser.create!({ user_id: demo.id, server_id: demo_server.id })
 demo_server_andrew = ServerUser.create!({ user_id: andrew.id, server_id: demo_server.id })

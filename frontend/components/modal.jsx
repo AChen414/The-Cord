@@ -4,7 +4,7 @@ import AddServerFormContainer from './servers/add_server_form_container';
 import AddChannelFormContainer from './channels/add_channel_form_container';
 import EditChannelFormContainer from './channels/edit_channel_form_container';
 import EditMessageFormContainer from './messages/edit_message_form_container';
-import InviteServerContainer from './servers/invite_server';
+import InviteServerContainer from './servers/invite_server_container';
 import { closeModal } from '../actions/modal_actions';
 
 const clearModalBackground = {
@@ -38,7 +38,7 @@ const Modal = ({modal, closeModal}, props) => {
             component = <EditMessageFormContainer props={props} />;
             break;
         case 'Invite Server':
-            component = <InviteServerContainer />;
+            component = <InviteServerContainer props={props} />;
             break;
         default:
             return null;
