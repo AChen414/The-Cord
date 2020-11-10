@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :servers, only: [:create, :destroy, :show, :index, :update]
     resources :channels, only: [:create, :destroy, :show, :index, :update]
     resources :messages, only: [:create, :destroy, :index, :update, :show]
+    post 'servers/join', to: 'servers#join'
   end
 
   mount ActionCable.server, at: '/cable'

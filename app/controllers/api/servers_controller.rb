@@ -36,6 +36,17 @@ class Api::ServersController < ApplicationController
         end
     end
 
+    def join 
+        @server = Server.find_by(invite_code: params[:invite_code])
+
+        if @server
+            ServerUser.create({ user_id: current_user.id, server_id: @server.id })
+            render :show
+        else
+            render json: ["Invalid code"], status: 422
+        end
+    end
+
     private
 
     def server_params

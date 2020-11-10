@@ -5,6 +5,7 @@ import AddChannelFormContainer from './channels/add_channel_form_container';
 import EditChannelFormContainer from './channels/edit_channel_form_container';
 import EditMessageFormContainer from './messages/edit_message_form_container';
 import InviteServerContainer from './servers/invite_server_container';
+import JoinServerFormContainer from './servers/join_server_form_container';
 import { closeModal } from '../actions/modal_actions';
 
 const clearModalBackground = {
@@ -39,6 +40,9 @@ const Modal = ({modal, closeModal}, props) => {
             break;
         case 'Invite Server':
             component = <InviteServerContainer props={props} />;
+            break;
+        case 'Join Server':
+            component = <JoinServerFormContainer />;
             break;
         default:
             return null;

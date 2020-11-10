@@ -26,3 +26,11 @@ export const destroyServer = serverId => {
         url: `/api/servers/${serverId}`
     })
 }
+
+export const joinServer = inviteCode => {
+    return $.ajax({
+        method: 'POST',
+        url: `api/servers/join`,
+        data: inviteCode
+    })
+}

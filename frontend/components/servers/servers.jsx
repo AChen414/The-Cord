@@ -51,6 +51,16 @@ class Servers extends React.Component {
                                 <span>Create a Server</span>
                             </div>
                         </div>
+                        <div
+                            className="server-button"
+                            onClick={() => dispatch(openModal('Join Server'))}
+                            id="join-server-button"
+                        >
+                            <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/join.png?versionId=1v5ZcnHOvyLWV9bV49UGQtYivjJ.Z.iM"/>
+                            <div className="server-name-hover">
+                                <span>Join Server</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <Modal />

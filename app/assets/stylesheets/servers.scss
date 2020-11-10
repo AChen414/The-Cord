@@ -157,3 +157,12 @@
     text-decoration: none;
     font-size: 16px;
 }
+
+#join-server-button {
+    &:hover {
+        background-color: var(--color-green);
+    }
+}
+#join-server-button > img {
+    width: 22px;
+}

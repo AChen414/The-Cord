@@ -66,3 +66,9 @@ export const deleteServer = serverId => dispatch => (
         dispatch(removeServer(serverId))
     ))
 )
+
+export const joinServer = inviteCode => dispatch => (
+    APIServerUtil.joinServer(inviteCode).then((server) => (
+        dispatch(receiveServer(server))
+    ))
+)
