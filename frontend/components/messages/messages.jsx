@@ -12,7 +12,6 @@ class Messages extends React.Component {
     };
 
     componentDidMount() {
-        console.log('messages mounted')
         let channelId = this.props.channelId;
         // App.cable.subscriptions.create(
         //     { channel: "ChatChannel", channel_id: channelId },
@@ -26,17 +25,13 @@ class Messages extends React.Component {
         //     }
         // )
         this.props.fetchAllServerInfo(this.props.serverId);
-        console.log(this.props.channelId)
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('messages updated')
         this.ref.current.scrollIntoView();
     }
 
     render() {
-        console.log('messages rendered')
-        console.log(this.props.channelId)
         let currentChannel = this.props.channels[this.props.channelId];
         let channelId = this.props.channelId;
         let currentUser = this.props.currentUser;

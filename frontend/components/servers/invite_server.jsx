@@ -3,11 +3,9 @@ import React from 'react';
 class InviteServer extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props, 'props, constructor')
     }
 
     render() {
-        console.log(this.props, 'props, render');
         return(
             <div className="invite-server-modal">
                 <h1 className="invite-server-title">Invite Friends to {this.props.server.name}</h1>

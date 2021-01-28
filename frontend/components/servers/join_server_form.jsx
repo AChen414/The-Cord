@@ -18,7 +18,6 @@ class JoinServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const serverInviteCode = { invite_code: this.state.invite_code };
-        console.log(serverInviteCode, 'invite code before submit')
         this.props.joinServer(serverInviteCode).then(() => this.props.closeModal());
     }
 

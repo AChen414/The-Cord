@@ -12,10 +12,7 @@ class MessageForm extends React.Component {
     }
 
     componentDidMount() {
-        console.log('form mounted')
-        console.log(this.state)
         this.setState({ channel_id: this.props.channel_id })
-        console.log(this.state)
     }
 
     componentDidUpdate(prevProps) {
@@ -26,7 +23,6 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state)
         const message = Object.assign({}, this.state)
         if (message.body.length) {
             this.props.createMessage(message)
@@ -42,7 +38,6 @@ class MessageForm extends React.Component {
     }
 
     render() {
-        console.log('form rendered')
         return(
             <div className='message-form'>
                 <form onSubmit={this.handleSubmit}>
