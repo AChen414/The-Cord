@@ -3,8 +3,6 @@ import React from 'react';
 class EditChannelForm extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props);
-        console.log(this.props.channel)
         this.state = {
             name: '',
             server_id: null,
@@ -17,7 +15,6 @@ class EditChannelForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const updatedChannel = Object.assign({}, this.state);
-        console.log(updatedChannel, 'bouta submit');
         this.props.editChannel(updatedChannel);
         this.props.closeModal();
     }
@@ -42,7 +39,6 @@ class EditChannelForm extends React.Component {
                 id: this.props.channelId
             })
         }
-        console.log(this.state)
     }
 
     render() {
