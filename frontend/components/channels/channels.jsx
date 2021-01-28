@@ -8,7 +8,24 @@ import ChannelItem from './channel_item';
 class Channels extends React.Component {
     constructor(props) {
         super(props);
+
+        this.toggleDropdown = this.toggleDropdown.bind(this);
     };
+
+    toggleDropdown() {
+        const dropDown = document.getElementsByClassName('server-options');
+        if (dropDown[0].style.visibility === 'hidden') {
+            dropDown[0].style.visibility = 'visible';
+        } else {
+            dropDown[0].style.visibility = 'hidden';
+        }
+    }
+
+    deleteServer() {
+        this.props.deleteServer(this.props.server.id)
+            .then(() => this.props.history.push('/@me'))
+            .then(() => location.reload());
+    }
 
     componentDidMount() {
         this.props.fetchAllServerInfo(this.props.serverId);
@@ -27,7 +44,7 @@ class Channels extends React.Component {
         let serverDelete;
         if (this.props.currentUser.id === this.props.server.owner_id) {
             serverDelete = 
-                <div className="server-delete" onClick={() => dispatch(openModal('Delete Server'))}>
+                <div className="server-delete" onClick={() => this.deleteServer()}>
                     <div className="delete-server">Delete Server</div>
                     <img src="https://the-cord-dev.s3-us-west-1.amazonaws.com/Red_X.svg"/>
                 </div>
@@ -41,7 +58,7 @@ class Channels extends React.Component {
         return (
             <>
                 <div className="channels">
-                    <div className="server-name-header">
+                    <div className="server-name-header" onClick={this.toggleDropdown}>
                         <h1>{this.props.server.name}</h1>
                         <span>V</span>
                         <div className="server-options">

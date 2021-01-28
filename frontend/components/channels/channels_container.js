@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchAllServerInfo } from '../../actions/server_actions';
+import { fetchAllServerInfo, deleteServer } from '../../actions/server_actions';
 import { fetchChannelMessages } from '../../actions/channel_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -18,6 +18,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
+        deleteServer: (serverId) => dispatch(deleteServer(serverId)),
         fetchAllServerInfo: (serverId) => dispatch(fetchAllServerInfo(serverId)),
         fetchChannelMessages: (channelId) => dispatch(fetchChannelMessages(channelId))
     };
