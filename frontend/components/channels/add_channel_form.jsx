@@ -1,56 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class AddChannelForm extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            name: '',
-            server_id: this.props.serverId
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+function AddChannelForm(props) {
+    const [name, setName] = useState('');
+    const [serverId, setServerId] = useState(props.serverId);
 
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const newChannel = Object.assign({}, this.state);
-        this.props.createChannel(newChannel).then(() => this.props.closeModal());
+        const newChannel = { name, server_id: serverId };
+        props.createChannel(newChannel).then(props.closeModal());
     }
 
-    handleInput(field) {
+    const handleNameInput = (field) => {
         return e => {
-            this.setState({ [field]: e.currentTarget.value })
+            setName(e.currentTarget.value);
         }
     }
 
-    render() {
-        return(
-            <div className="add-channel-form">
-                <h1>CREATE TEXT CHANNEL</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="channel-form-name">
-                        <label>
-                            <span>Channel Name</span>    
-                            <span className="channel-form-name-err">{}</span>
-                            <input 
-                                type="text" 
-                                className="channel-form-input"
-                                value={this.state.name}
-                                onChange={this.handleInput('name')}
-                            />
-                        </label>    
-                    </div>  
-                    <div className="form-bottom">
-                        <div className="channel-form-back" onClick={() => this.props.closeModal()}>
-                            <span>Cancel</span>
-                        </div>
-                        <button className="channel-form-submit">
-                            Create Channel
-                        </button>
+    return(
+        <div className="add-channel-form">
+            <h1>CREATE TEXT CHANNEL</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="channel-form-name">
+                    <label>
+                        <span>Channel Name</span>
+                        <span className="channel-form-name-err">{ }</span>
+                        <input
+                            type="text"
+                            className="channel-form-input"
+                            value={name}
+                            onChange={handleNameInput('name')}
+                        />
+                    </label>
+                </div>
+                <div className="form-bottom">
+                    <div className="channel-form-back" onClick={() => props.closeModal()}>
+                        <span>Cancel</span>
                     </div>
-                </form>
-            </div>
-        )
-    }
+                    <button className="channel-form-submit">
+                        Create Channel
+                        </button>
+                </div>
+            </form>
+        </div>
+    )
 }
 
 export default AddChannelForm;
