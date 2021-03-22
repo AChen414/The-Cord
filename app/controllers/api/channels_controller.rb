@@ -25,7 +25,7 @@ class Api::ChannelsController < ApplicationController
         if @channel
             @channel.destroy
         else
-            render json: ["Error in deleting channel"], status: 423
+            render json: ["Error in deleting channel"], status: 425
         end
     end
 
