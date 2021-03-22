@@ -14,7 +14,6 @@ function MessageForm(props) {
     }, [props.channel_id])
 
     const handleBodyChange = (type) => {
-        console.log(channelId);
         return e => {
             setBody(e.currentTarget.value);
         }

@@ -1,78 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class EditMessageForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: null,
-            body: '',
-            author_id: null,
-            channel_id: null
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-    }
+function EditMessageForm(props) {
+    const [id, setId] = useState(null);
+    const [body, setBody] = useState('');
+    const [authorId, setAuthorId] = useState(null);
+    const [channelId, setChannelId] = useState(null);
 
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const updatedMessage = Object.assign({}, this.state);
-        this.props.editMessage(updatedMessage).then(this.props.closeModal());
+        const updatedMessage = { body, id, author_id: authorId, channel_id: channelId };
+        props.editMessage(updatedMessage).then(props.closeModal());
     }
 
-    handleDelete(e) {
-        this.props.deleteMessage(this.props.messageId.id);
-        this.props.closeModal();
+    const handleDelete = (e) => {
+        props.deleteMessage(props.messageId.id);
+        props.closeModal();
     }
 
-    handleInput(field) {
+    const handleBodyInput = (field) => {
         return e => {
-            this.setState({ [field]: e.currentTarget.value })
+            setBody(e.currentTarget.value);
         }
     }
 
-    componentDidMount() {
-        let currentMessage = this.props.messages[this.props.messageId.id];
-        this.setState({
-            body: currentMessage.body,
-            author_id: this.props.author.id,
-            channel_id: currentMessage.channel_id,
-            id: currentMessage.id
-        })
-    }
+    useEffect(() => {
+        let currentMessage = props.messages[props.messageId.id];
+        setBody(currentMessage.body);
+        setAuthorId(props.author.id);
+        setChannelId(currentMessage.channel_id);
+        setId(currentMessage.id);
+    }, [])
 
-    render() {
-        return(
-            <div className="edit-message-form">
-                <h1>Edit Message</h1>
-                <h2 onClick={() => this.props.closeModal()}>X</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="message-form-edit">
-                        <label>
-                            <span>Message</span>
-                            <span className="message-form-message-err">{}</span>
-                            <input 
-                                type="text"
-                                className="edit-message-form-input"
-                                value={this.state.body}
-                                onChange={this.handleInput('body')}
-                            />
-                        </label>
-                    </div>
-                    <div className="form-bottom">
-                        <div className="channel-form-back">
-                            <span 
-                                className="channel-form-delete"
-                                onClick={this.handleDelete}
-                            >
-                                Delete Message
+    return (
+        <div className="edit-message-form">
+            <h1>Edit Message</h1>
+            <h2 onClick={() => props.closeModal()}>X</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="message-form-edit">
+                    <label>
+                        <span>Message</span>
+                        <span className="message-form-message-err">{ }</span>
+                        <input
+                            type="text"
+                            className="edit-message-form-input"
+                            value={body}
+                            onChange={handleBodyInput('body')}
+                        />
+                    </label>
+                </div>
+                <div className="form-bottom">
+                    <div className="channel-form-back">
+                        <span
+                            className="channel-form-delete"
+                            onClick={handleDelete}
+                        >
+                            Delete Message
                             </span>
-                        </div>
-                        <button className="channel-form-submit">Update Message</button>
                     </div>
-                </form>
-            </div>
-        )
-    }
+                    <button className="channel-form-submit">Update Message</button>
+                </div>
+            </form>
+        </div>
+    )
 }
 
 export default EditMessageForm;
