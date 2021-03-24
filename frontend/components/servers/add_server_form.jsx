@@ -1,67 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class AddServerForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            name: `${this.props.currentUser.username}\'s Server`,
-            owner_id: this.props.currentUser.id,
-            invite_code: Math.random().toString(32).toUpperCase().slice(5)
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
-    };
+function AddServerForm(props) {
+    const [name, setName] = useState(`${props.currentUser.username}\'s Server`);
+    const [ownerId, setOwnerId] = useState(props.currentUser.id);
+    const [inviteCode, setInviteCode] = useState(Math.random().toString(32).toUpperCase().slice(5));
 
-    serverAbbreviation(serverName) {
+    const serverAbbreviation = (serverName) => {
         let abbreviated = '';
         let serverNameArr = serverName.split(' ');
-        serverNameArr.forEach( (name) => {
-            abbreviated += name[0];
-        });
+        serverNameArr.forEach(name => abbreviated += name[0]);
         return abbreviated;
     }
 
-    handleInput(field) {
+    const handleNameInput = (field) => {
         return e => {
-            this.setState({ [field]: e.currentTarget.value })
-        };
+            setName(e.currentTarget.value);
+        }
     }
 
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const newServer = Object.assign({}, this.state);
-        this.props.createServer(newServer).then(() => this.props.closeModal());
+        const newServer = { name, owner_id: ownerId, invite_code: inviteCode };
+        props.createServer(newServer).then(() => props.closeModal());
     }
 
-    render() {
-        return(
-            <div className="add-server-form">
-                <h1>CREATE YOUR SERVER</h1>
-                <p>By creating a server, you will have access to free text chat to use amongst your friends</p>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="server-form-name">
-                        <label>
-                            <span>SERVER NAME</span>
-                            <span className="server-form-name-error">{}</span>
-                            <input 
-                                type="text"
-                                value={this.state.name}
-                                onChange={this.handleInput('name')}
-                                className="server-form-input"
-                            />
-                        </label>
-                    </div>
-                    <div className="form-bottom">
-                        <div className="server-form-back" onClick={() => this.props.closeModal()}>
-                            BACK
+    return (
+        <div className="add-server-form">
+            <h1>CREATE YOUR SERVER</h1>
+            <p>By creating a server, you will have access to free text chat to use amongst your friends</p>
+            <form onSubmit={handleSubmit}>
+                <div className="server-form-name">
+                    <label>
+                        <span>SERVER NAME</span>
+                        <span className="server-form-name-error">{ }</span>
+                        <input
+                            type="text"
+                            value={name}
+                            onChange={handleNameInput('name')}
+                            className="server-form-input"
+                        />
+                    </label>
+                </div>
+                <div className="form-bottom">
+                    <div className="server-form-back" onClick={() => props.closeModal()}>
+                        BACK
                         </div>
-                        <button className="server-form-submit">
-                            Create
+                    <button className="server-form-submit">
+                        Create
                         </button>
-                    </div>
-                </form>
-            </div>
-        )
-    };
-};
+                </div>
+            </form>
+        </div>  
+    )
+}
 
 export default AddServerForm;
