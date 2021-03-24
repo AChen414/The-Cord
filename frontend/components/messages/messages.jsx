@@ -1,5 +1,5 @@
-import React from 'react';
-import MessageForm from './message-form';
+import React, { useState, useEffect, useRef } from 'react';
+import MessageForm from './message_form';
 import Message from './message';
 
 class Messages extends React.Component {
@@ -43,10 +43,10 @@ class Messages extends React.Component {
                 return message.channel_id === currentChannel.id;
             })
             messages = channelMessages.map((message, i) => {
-                return <Message 
-                    message={message} 
+                return <Message
+                    message={message}
                     author={this.props.users[message.author_id]?.username}
-                    currentUser={this.props.currentUser}    
+                    currentUser={this.props.currentUser}
                     key={i}
                 />
                 // return (
@@ -58,7 +58,7 @@ class Messages extends React.Component {
             })
         }
 
-        return(
+        return (
             <div className="message-box">
                 <div className="message-list">
                     <div className="chat">
@@ -70,10 +70,10 @@ class Messages extends React.Component {
                         {messages}
                         <div ref={this.ref}></div>
                     </div>
-                    <MessageForm 
-                        currentUserId={currentUser?.id} 
-                        channel_id={channelId} 
-                        channelName={currentChannel?.name} 
+                    <MessageForm
+                        currentUserId={currentUser?.id}
+                        channel_id={channelId}
+                        channelName={currentChannel?.name}
                         createMessage={this.props.createMessage}
                     />
                 </div>
@@ -81,5 +81,6 @@ class Messages extends React.Component {
         )
     };
 };
+
 
 export default Messages;

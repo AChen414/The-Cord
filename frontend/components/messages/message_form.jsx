@@ -4,7 +4,6 @@ function MessageForm(props) {
     const [body, setBody] = useState('');
     const [authorId, setAuthorId] = useState(props.currentUserId);
     const [channelId, setChannelId] = useState(null);
-    const darkTheme = useContext()
 
     useEffect(() => { // on mount
         setChannelId(props.channel_id);
@@ -12,7 +11,7 @@ function MessageForm(props) {
 
     useEffect(() => {
         setChannelId(props.channel_id);
-    }, [channelID])
+    }, [props.channel_id])
 
     const handleBodyChange = (type) => {
         return e => {
@@ -22,7 +21,7 @@ function MessageForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const message = { body, channelId, authorId };
+        const message = { body, channel_id: channelId, author_id: authorId };
         if (message.body.length) {
             props.createMessage(message);
         }

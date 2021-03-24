@@ -1,54 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class JoinServerForm extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            invite_code: ''
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+function JoinServerForm(props) {
+    const [inviteCode, setInviteCode] = useState('');
 
-    handleInput(field) {
+    const handleInput = (field) => {
         return e => {
-            this.setState({ [field]: e.currentTarget.value })
+            setInviteCode(e.currentTarget.value);
         }
     }
 
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const serverInviteCode = { invite_code: this.state.invite_code };
-        this.props.joinServer(serverInviteCode).then(() => this.props.closeModal());
+        const serverInviteCode = { invite_code: inviteCode };
+        props.joinServer(serverInviteCode).then(() => props.closeModal());
     }
 
-    render() {
-        return(
-            <div className="join-server-form">
-                <h1>JOIN A SERVER</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="server-form-code">
-                        <label>
-                            <span>Invite Code</span>
-                            <span className="server-form-code-error">{}</span>
-                            <input 
-                                type="text"
-                                className="server-form-code-input"
-                                onChange={this.handleInput('invite_code')}
-                            />
-                        </label>
+    return (
+        <div className="join-server-form">
+            <h1>JOIN A SERVER</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="server-form-code">
+                    <label>
+                        <span>Invite Code</span>
+                        <span className="server-form-code-error">{ }</span>
+                        <input
+                            type="text"
+                            className="server-form-code-input"
+                            onChange={handleInput('invite_code')}
+                        />
+                    </label>
+                </div>
+                <div className="form-bottom">
+                    <div className="server-form-back" onClick={() => props.closeModal()}>
+                        <span>Cancel</span>
                     </div>
-                    <div className="form-bottom">
-                        <div className="server-form-back" onClick={() => this.props.closeModal()}>
-                            <span>Cancel</span>
-                        </div>
-                        <button className="server-form-submit">
-                            Join Server
+                    <button className="server-form-submit">
+                        Join Server
                         </button>
-                    </div>
-                </form>
-            </div>
-        )
-    }
+                </div>
+            </form>
+        </div>
+    )
 }
 
 export default JoinServerForm;
