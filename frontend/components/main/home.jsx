@@ -8,7 +8,7 @@ const Home = (props) => {
                 <h1>Home</h1>
             </div>  
             <div className="line"></div>
-            </div>
+        </div>
 
         <div className="chat-placeholder"></div>
         </>
