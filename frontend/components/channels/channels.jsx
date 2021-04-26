@@ -47,7 +47,7 @@ function Channels(props) {
         </div>
 
     return (
-        <>
+        <div className="channel">
             <div className="channels">
                 <div className="server-name-header" onClick={toggleDropdown}>
                     <h1>{props.server.name}</h1>
@@ -78,29 +78,29 @@ function Channels(props) {
                     </div>
                 </div>
             </div>
-
-            <div className="top-nav-bar">
-                <div className="channel-name">
-                    #{currentChannel}
+            <div className="channel-data">
+                <div className="top-nav-bar">
+                    <div className="channel-name">
+                        #{currentChannel}
+                    </div>
                 </div>
-            </div>
 
-            <div className="channel-messages">
-
-                <div className="messages">
-                    <MessagesContainer />
-                    <div className="users">
-                        <div className="users-list">
-                            <h1>Users</h1>
-                            {props.users.map((user, i) => (
-                                <div className="user" key={user.username}>{user.username}</div>
-                            ))}
+                <div className="channel-messages">
+                    <div className="messages">
+                        <MessagesContainer />
+                        <div className="users">
+                            <div className="users-list">
+                                <h1>Users</h1>
+                                {props.users.map((user, i) => (
+                                    <div className="user" key={user.username}>{user.username}</div>
+                                    ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <Modal />
-        </>
+        </div>
     )
 }
 

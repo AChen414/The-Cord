@@ -14,10 +14,12 @@ class Main extends React.Component {
     render() {
         return(
             <div className="main-page">
-                <ServersContainer />
+                <div className="content">
+                    <ServersContainer />
+                    <Route exact path="/@me" component={Home}/>
+                    <Route path="/@me/channels/:server_id/:channel_id" component={ChannelsContainer}/>
+                </div>
                 <FooterContainer />
-                <Route exact path="/@me" component={Home}/>
-                <Route path="/@me/channels/:server_id/:channel_id" component={ChannelsContainer}/>
             </div>
         )
     };

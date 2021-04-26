@@ -14,12 +14,11 @@
 
 .servers {
     background: var(--color-dark-gray-server);
-    height: 100vh;
-    width: 72px;
+    width: 4.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 1rem;
     position: relative;
     overflow: scroll;
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
@@ -32,8 +31,8 @@
 }
 
 .server-button {
-    width: 48px;
-    height: 48px;
+    width: 3rem;
+    height: 3rem;
     background: var(--color-server-button-gray);
     border-radius: 50%;
     display: flex;
@@ -58,10 +57,10 @@
 }
 
 .separator {
-    width: 48px;
-    height: 2px;
+    width: 3rem;
+    height: .13rem;
     background: var(--color-server-button-gray);
-    margin-bottom: 10px;
+    margin-bottom: .63rem;
     left: 4px;
 }
 
@@ -71,9 +70,10 @@
     display: flex;
     justify-content: space-between;
     align-self: flex-end;
-    width: 250px;
-    height: 52px;
-    margin-left: 72px;
+    width: 15.6rem;
+    height: 3.5rem;
+    margin-left: 4.42rem;
+    bottom: 0rem;
     z-index: 15;
 }
 
