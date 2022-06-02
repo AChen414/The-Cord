@@ -1,5 +1,5 @@
 # The Cord
-[The Cord](the-cord.herokuapp.com) is my rendition of the Discord app, a digital distribution platform for building communities for gamers, businesses, and everything inbetween. The Cord allows you to:
+[The Cord](https://the-cord.herokuapp.com) is my rendition of the Discord app, a digital distribution platform for building communities for gamers, businesses, and everything inbetween. The Cord allows you to:
   * Log and Sign in securely
   * Create communities through servers
   * Take part in discussions through text channels with real-time messaging
